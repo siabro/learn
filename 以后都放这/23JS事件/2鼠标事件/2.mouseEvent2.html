@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#wrap {
+				width: 100px;
+				height: 100px;
+				background: red;
+				position: absolute;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="wrap"></div>
+	</body>
+</html>
+<script type="text/javascript">
+	var wrap = document.getElementById('wrap');
+	
+	wrap.onmouseover = function() {
+		console.log('进入');
+	}
+	wrap.onmouseout = function() {
+		console.log('出来');
+	}
+	
+	wrap.onmouseenter = function() {
+		console.log('1');
+	}
+	wrap.onmouseleave = function() {
+		console.log('2');
+	}
+</script>

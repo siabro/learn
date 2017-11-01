@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#wrap {
+				width: 800px;
+				height: 600px;
+				border: 1px solid black;
+				position: relative;
+				margin: 0 auto;
+			}
+			#box {
+				width: 100px;
+				height: 100px;
+				background: red;
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="wrap">
+			<div id="box"></div>
+		</div>
+	</body>
+</html>
+<script type="text/javascript">
+	var wrap = document.getElementById('wrap');
+	var box = document.getElementById('box');
+	
+	
+	
+	function random(min,max) {
+		return parseInt(Math.random() * (max - min) + min);
+	}
+	box.style.left = random(0,wrap.offsetWidth - box.offsetWidth) + 'px';
+	box.style.top = random(0,wrap.offsetHeight - box.offsetHeight) + 'px';
+	
+	move();
+	function move() {
+		var left = box.offsetLeft;
+		var boxTop = box.offsetTop;
+		var judgeLeft = true;
+		var judgeTop = true;
+		
+		var timer = setInterval(function() {
+			
+			if(judgeLeft) {
+				left++;
+			}else {
+				left--;
+			}
+			
+			if (left >= wrap.offsetWidth - box.offsetWidth) {
+				judgeLeft = false;
+			} else if (left ==0) {
+				judgeLeft = true;
+			}
+			box.style.left = left +'px';
+			
+			if(judgeTop) {
+				boxTop++;
+			}else {
+				boxTop--;
+			}
+			
+			if (boxTop >= wrap.offsetHeight - box.offsetHeight) {
+				judgeTop = false;
+			} else if (boxTop ==0) {
+				judgeTop = true;
+			}
+			box.style.top = boxTop +'px';
+		},5)
+	}
+	
+	
+	
+</script>

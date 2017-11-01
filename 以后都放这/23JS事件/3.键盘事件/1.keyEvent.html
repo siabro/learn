@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script type="text/javascript">
+	//	键盘事件都是添加到window上的
+	//	常用键盘事件		onkeydown,onkeyup,onkeypress
+	//	onkeydown	支持所有按键
+	//	onkeypress	支持英文，数字，回车，不支持上下左右、F1-F12、tab、shift等功能键
+	//	onkeydown比onkeypress先出现
+	
+	console.log(window);
+	
+	window.onkeydown = function(e) {
+		var ev = e || window.event;
+		if(ev.keyCode == 65) {
+			console.log('按的是a')
+		}
+		console.log('键盘按下');
+		console.log(ev.keyCode);
+	}
+	
+	window.onkeyup = function() {
+		console.log('按键抬起');
+	}
+	
+	window.onkeypress = function(e) {
+		var ev = e || window.event;
+		console.log(ev.keyCode);
+	}
+</script>

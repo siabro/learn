@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.box {
+				width: 400px;
+			}
+			
+			.left {
+				float: left;
+			}
+			
+			.right {
+				float: right;
+				width: 398px;
+			}
+		</style>
+	</head>
+	<body>
+		<!--再IE6下的文字溢出bug
+			子元素的宽度和父级的宽度如果相差小于3px的时候
+			两个浮动元素中间有注释或者内联元素，就会出现文字溢出bug，内联元素越多，溢出越多
+			
+			解决办法：用块标签把注释或者内联元素包起来、修改宽度
+		-->
+		<div class="box">
+			<div class="left"></div>
+			<!--上面的是left部分-->
+			<span></span>
+			<span></span>
+			<div class="right">古典风格的哈</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../../../css/reset.css"/>
+		<meta name="viewport" content="width=1240,user-scalable=no,target-densitydpi=device-dpi" />
+		<style type="text/css">
+			.calculator {
+				width: 1240px;
+				height: 2200px;
+				border: 1px solid black;
+				box-sizing: border-box;
+			}
+			.result_cont {
+				width: 100%;
+				height: 650px;
+				background: black;
+				font-size: 235px;
+				color: white;
+				font-family: simhei";
+			}
+			.result_cont p {
+				float: right;
+				margin-top: 300px;
+				margin-right: 60px;
+			}
+			table {
+				margin-top: 0;
+				width: 100%;
+				height: 1550px;
+			}
+			tr {
+				height: 20%;
+			}
+			td {
+				width: 25%;
+				border: 1px solid black;
+				font-size: 70px;
+				text-align: center;
+				background: #d0d1d4;
+			}
+			.menu {
+				background: #c5c5c7;
+			}
+			.operation {
+				background: #f98e12;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="calculator">
+			<div class="result_cont">
+				<p class="result">0</p>
+			</div>
+			<table>
+				<tr>
+					<td id="AC" class="menu">AC</td>
+					<td id="addOrminus" class="menu">+/-</td>
+					<td id="delivery" class="menu">%</td>
+					<td id="divide" class="operation">÷</td>
+				</tr>
+				<tr>
+					<td id="seven" class="num">7</td>
+					<td id="eight" class="num">8</td>
+					<td id="nine" class="num">9</td>
+					<td id="multiply" class="operation">X</td>
+				</tr>
+				<tr>
+					<td id="four" class="num">4</td>
+					<td id="five" class="num">5</td>
+					<td id="six" class="num">6</td>
+					<td id="subtract" class="operation">-</td>
+				</tr>
+				<tr>
+					<td id="one" class="num">1</td>
+					<td id="two" class="num">2</td>
+					<td id="three" class="num">3</td>
+					<td id="add" class="operation">+</td>
+				</tr>
+				<tr>
+					<td id="zero" colspan="2" class="num">0</td>
+					<td id="point">.</td>
+					<td id="equal" class="operation">=</td>
+				</tr>
+			</table>
+		</div>
+	</body>
+</html>
+<script type="text/javascript">
+	var oResult = document.getElementsByClassName('result')[0];
+	var num = document.getElementsByClassName('num');
+	var oAC = document.getElementById('AC');
+	var one = document.getElementById('one');
+	var two = document.getElementById('two');
+	var three = document.getElementById('three');
+	var four = document.getElementById('four');
+	var five = document.getElementById('five');
+	var six = document.getElementById('six');
+	var seven = document.getElementById('seven');
+	var eight = document.getElementById('eight');
+	var nine = document.getElementById('nine'); 
+	var zero = document.getElementById('zero'); 
+	var add = document.getElementById('add');
+	var subtract = document.getElementById('subtract');
+	var multiply = document.getElementById('multiply');
+	var divide = document.getElementById('divide');
+	var equal = document.getElementById('equal');
+	var point = document.getElementById('point');
+	
+	//AC按钮
+	oAC.onclick = function() {
+		oResult.innerHTML = 0;
+	}
+	
+	// 判断是否第一次输入数字
+	function fn1(num) {
+		if(oResult.innerHTML == '0'){
+			oResult.innerHTML = num;
+		}else{
+			oResult.innerHTML += num;
+		}
+	}
+	
+//	for(var i=0;i<10;i++) {
+//		num[i].onclick = function() {
+//			
+//		}
+//	}
+	
+	one.onclick = function() {
+		fn1(1);
+	}
+	two.onclick = function() {
+		fn1(2);
+	}
+	three.onclick = function() {
+		fn1(3);
+	}
+	four.onclick = function() {
+		fn1(4);
+	}
+	five.onclick = function() {
+		fn1(5);
+	}
+	six.onclick = function() {
+		fn1(6);
+	}
+	seven.onclick = function() {
+		fn1(7);
+	}
+	eight.onclick = function() {
+		fn1(8);
+	}
+	nine.onclick = function() {
+		fn1(9);
+	}
+	zero.onclick = function() {
+		fn1(0);
+	}
+	point.onclick = function() {
+		oResult.innerHTML += '.';
+	}
+	
+	function addFn( first , last ) {
+		var c = first + last;
+		return c;
+	}
+	
+	function subtractFn( first , last ) {
+		var c = first - last;
+		return c;
+	}
+	
+	function multiplyFn( first , last ) {
+		var c = first * last;
+		return c;
+	}
+	
+	function divideFn( first , last ) {
+		var c = first / last;
+		return c;
+	}
+	
+	add.onclick = function() {
+		var firstNum = parseFloat(oResult.innerHTML);
+		oResult.innerHTML = '';
+		equal.onclick = function() {
+			var lastNum = oResult.innerHTML;
+			var d = addFn( firstNum ,  parseFloat(oResult.innerHTML) );
+			oResult.innerHTML = d;
+		}
+	}
+	
+	subtract.onclick = function() {
+		var firstNum = parseFloat(oResult.innerHTML);
+		oResult.innerHTML = '';
+		equal.onclick = function() {
+			var lastNum = oResult.innerHTML;
+			var d = subtractFn( firstNum ,  parseFloat(oResult.innerHTML) );
+			oResult.innerHTML = d;
+		}
+	}
+	
+	multiply.onclick = function() {
+		var firstNum = parseFloat(oResult.innerHTML);
+		oResult.innerHTML = '';
+		equal.onclick = function() {
+			var lastNum = oResult.innerHTML;
+			var d = multiplyFn( firstNum ,  parseFloat(oResult.innerHTML) );
+			oResult.innerHTML = d;
+		}
+	}
+	
+	divide.onclick = function() {
+		var firstNum = parseFloat(oResult.innerHTML);
+		oResult.innerHTML = '';
+		equal.onclick = function() {
+			var lastNum = oResult.innerHTML;
+			var d = divideFn( firstNum ,  parseFloat(oResult.innerHTML) );
+			oResult.innerHTML = d;
+		}
+	}
+	
+</script>

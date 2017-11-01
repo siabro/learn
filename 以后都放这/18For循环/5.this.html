@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<ul>
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+		</ul>
+	</body>
+</html>
+<script type="text/javascript">
+	/*
+		函数
+			function(){}	匿名函数
+			function fn1(){} 命名函数  fn1就是函数名
+			
+			函数不调用就不会执行
+				函数的调用
+					1.事件的调用
+						如:
+						1.aLi[i].onclick = function(){};
+						2.aLi[i].onclick = fn1;
+					2.直接调用
+						函数名+();就会直接调用，不管在哪个位置，只要函数名加()就会执行
+			
+			this  指向   这个的意思
+				1.事件调用时，this指的就是事件前面的对象
+				2.直接调用的时候，this永远指的是window	如:window.alert();
+				
+	*/
+	
+	var aLi = document.getElementsByTagName('li');
+	
+	for(var i=0;i<3;i++) {
+//		aLi[i].onclick = function(){
+//			alert(1);
+//		}
+		aLi[i].onclick = fn1;
+	}
+	function fn1(){
+		alert(this.innerHTML);
+	}
+	
+</script>

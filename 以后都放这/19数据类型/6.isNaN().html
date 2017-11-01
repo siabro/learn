@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script>
+	/*
+		NaN 不是一个数字的数字类型		not a number
+		isNaN 判断是否不是一个数字    	is not a number
+			执行isNaN时   先将数据用Number()进行转换再进行判断
+	*/
+	
+	var a = Number('abc');
+	var b = '10px';
+	alert( isNaN(b) );
+//	alert( isNaN( Number(b) ) );
+</script>

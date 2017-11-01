@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div {
+				height: 200px;
+				border: 1px solid red;
+				/*background: linear-gradient(90deg,red 100px,yellow 120px,blue 140px);*/
+				background: #ccc linear-gradient(90deg,
+					rgba(255,255,255,0) 100px,
+					rgba(255,255,255,1) 140px,
+					rgba(255,255,255,1) 180px,
+					rgba(255,255,255,0) 220px
+				) -300px 0 no-repeat;
+				/*transition: 1s;*/
+			}
+			
+			body:hover div {
+				background-position: 2000px;
+				transition: 1s;
+			}
+		</style>
+	</head>
+	<body>
+		<!--
+			渐变  	IE9以下不支持
+				线型渐变
+				
+				径向渐变
+		-->
+		<div></div>
+	</body>
+</html>

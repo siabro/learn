@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body {
+				margin: 0;
+			}
+			
+			.div {
+				width: 100px;
+				height: 100px;
+				background: red;
+				margin: 50px;	
+				float: left;
+				display: inline;
+			}
+		</style>
+	</head>
+	<body>
+		<!--
+			IE6下双边距问题
+			再IE6下，块元素浮动时有横向的margin值的时候，横向的margin值
+			会被放大两倍
+			解决办法，转化为inline
+			
+		-->
+		<div class="fa">
+			<div class="div"></div>
+		</div>
+	</body>
+</html>

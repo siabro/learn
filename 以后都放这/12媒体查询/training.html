@@ -1,0 +1,113 @@
+<!doctype html>
+<html>
+	<head>
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scale=no">
+	<style>
+		html {
+			width:100%;
+			height: 100%;
+		}
+		
+		html,body {
+			margin: 0;
+		}
+		
+		input {
+			margin: 0;
+			padding: 0;
+			outline: none;
+			border: none;
+		}
+		
+		.content {
+			width: 100%;
+			height: 100%;
+		}
+		
+		.img_cont {
+			width: 40%;
+			margin: 56px auto 0; 
+		}
+		
+		.img_cont img {
+			width: 100%;
+		}
+		
+		.login_from {
+			width: 100%;
+			margin-top: 29px;
+		}
+		
+		.login_from input[type=text] {
+			width: 73.33%;
+			height: 30px;
+			margin: 0 auto;
+			color: #a9a9a9;
+			display: block;
+			border-radius: 12px;
+			border: 1px solid #dddddd;
+			font: 14px/30px "微软雅黑";
+			padding-left: 25px;
+			box-sizing: border-box;
+			margin-bottom: 18px;
+			letter-spacing:1px;
+		}
+		
+		.trf {
+			width: 100%;
+		}
+		
+		.to_register_forgetpwd {
+			width: 100;
+			margin: 0 auto;
+			height: 48px;
+			color: #00cc33;
+			font-size: 14px;
+			padding: 0 57px 0 57px;
+			box-sizing: border-box;
+		}
+		
+		.to_login {
+			float: left;
+			margin-top: 0;
+		}
+		
+		.to_forgetpwd {
+			float: right;
+			margin-top: 0;
+		}
+		
+		.login_from input[type=submit] {
+			width: 50%;
+			height: 35px;
+			margin: 0 auto;
+			display: block;
+			background: #00cc33;
+			border-radius: 17px;
+			font: 16px/35px "微软雅黑";
+			color: white;
+			box-shadow: 0px 0px 10px #00cc33,-0px -0px 2px #00cc33;
+		}
+	</style>
+	</head>
+	<body>
+		<div class="content">
+			<div class="img_cont">
+				<img src="../../img/logo.png">
+			</div>
+			<div class="login_from">
+				<input type="text" name="username" value="请输入手机号或邮箱地址"/>
+				<input type="text" namr="pwd" value="请输入6-20位密码"/>
+				<div class="trf">
+					<div class="to_register_forgetpwd">
+						<p class="to_login">注册</p>
+						<p class="to_forgetpwd">忘记密码</p>
+					</div>
+				</div>
+				<input type="submit" name="" value="登录"/>
+			</div>
+			
+		</div>
+	</body>
+</html>

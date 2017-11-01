@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="wrap">
+			<div id="first"></div>
+			<p></p>
+			<ul>
+				<li></li>
+			</ul>
+		</div>
+	</body>
+</html>
+<script type="text/javascript">
+	var wrap = document.getElementById('wrap');
+	/*
+	 * 获取当前节点的所有子节点
+	
+			获取子节点分为两种
+				1.将文本内容页当成节点
+					childNodes : 包含了文本内容，文本内容页当做节点
+					firstChild
+					lastChid
+				2.获得标签的子节点
+					children : 只包含节点，不包含文本
+					fisrtElementChild
+					lastElementChild
+		获得当前节点
+			nodeName	获得当前节点的名称
+			parentNode 	获得当前节点的父节点
+			
+	*/
+	var child = wrap.childNodes;
+	console.log(child);
+	
+	var child = wrap.children;
+	console.log(child);
+	
+	//获得标签的首个子节点(文本节点)
+	var first = wrap.firstChild;
+	
+	//获得标签的首个子节点(元素节点)
+	var first = wrap.firstElementChild;
+	console.log(first);
+	
+	//获得当前节点的一些内容
+	//当前节点名称
+	var value = wrap.nodeName;
+	console.log(value);
+	//当前节点的父节点
+	var value = wrap.parentNode;
+	console.log(value);
+</script>

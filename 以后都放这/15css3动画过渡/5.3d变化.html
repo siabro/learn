@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#box1 {
+				width: 100px;
+				height: 100px;
+				border: 5px solid red;
+				padding: 100px;
+				transform-style: preserve-3d;
+				perspective: 200px;
+			}
+			span {
+				display: block;
+				width: 100px;
+				height: 100px;
+				background: red;
+				transition: 1s;
+			}
+			#box1:hover span {
+				transform: translateZ(-200px);
+			}
+		</style>
+	</head>
+	<body>
+		<!--
+			3d效果，首先要给需要进行3d变换的元素的父级元素，添加3d环境  和 景深
+				方法:
+					transform-style:preserve-3d;  添加3d环境
+					perspective:数值;			   景深，如300px
+					
+					transform
+						rotateX		按照X轴旋转
+						rotateY		按照Y轴旋转
+						rotateZ		按照Z轴旋转
+						
+						translateX	按照X轴移动
+						translateY	按照Y轴移动
+						translateZ	按照Z轴移动
+						
+			兼容	IE9一下不支持
+		-->
+		<div id="box1">
+			<span></span>
+		</div>
+	</body>
+</html>

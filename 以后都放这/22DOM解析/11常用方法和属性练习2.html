@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../../css/reset.css"/>
+		<style type="text/css">
+			#wrap {
+				width: 800px;
+				border: 1px solid black;
+				margin: 0 auto;
+			}
+			#wrap::after {
+				content: "";
+				display: block;
+				clear: both;
+			}
+			ul {
+				width: 200px;
+				float: left;
+			}
+			li {
+				width: 200px;
+				border: 1px solid red;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="wrap">
+			<ul></ul>
+			<ul></ul>
+			<ul></ul>
+			<ul></ul>
+		</div>
+	</body>
+</html>
+<script type="text/javascript">
+	var wrap = document.getElementById('wrap');
+	var uls = document.getElementsByTagName('ul');
+	
+	var num = 30;
+	
+	begin();
+	creatLi();
+	
+	function begin() {
+		for(var i=0;i<uls.length;i++) {
+			var ul = uls[i];
+			ul.currentHeigth = 0;
+		}
+	}
+	function random(min,max) {
+		return parseInt(Math.random() * (max - min) + min);
+	}
+	function minHeight() {
+		var minUl = uls[0];
+		for(var i=1;i<uls.length;i++){
+			if(minUl.currentHeigth > uls[i].currentHeigth) {
+				minUl = uls[i];
+			}
+		}
+		return minUl; 
+	}
+	function creatLi() {
+		for(var i=0;i<num;i++) {
+			var li = document.createElement('li');
+			li.style.height = random(100,300) + "px";
+			li.innerHTML = i;
+			var ul = minHeight();
+			ul.appendChild(li);
+			ul.currentHeigth += li.offsetHeight;
+			console.log(ul.currentHeigth);
+		}
+	}
+	
+	
+	
+	
+</script>

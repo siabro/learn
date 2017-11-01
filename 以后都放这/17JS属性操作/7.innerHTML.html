@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			img {
+				width: 100px;
+				height: 100px;
+			}
+		</style>
+	</head>
+	<body>
+		<input type="button" value="点"  id="btn1"/>
+		<div id="div1"></div>
+	</body>
+</html>
+<script type="text/javascript">
+	/*
+	innerHTML就是元素里面所有的东西   文字  换行  标签...
+	
+	innerHTML可以进行读、写操作
+		oDiv，innerHTML
+			读取元素里面的内容
+		oDiv.innerHTML = 新的值;
+			替换	用新的值   代替   旧的值
+			
+		+=
+			在自身的基础上  累加一个新的值		a = a + 2
+	*/
+	var oBtn = document.getElementById('btn1');
+	var oDiv = document.getElementById('div1');
+	var a = 1;
+	oBtn.onclick = function() {
+//		oDiv.innerHTML = oDiv.innerHTML + 'adf';
+
+		if (a > 2) {
+			a = 1;
+		}
+		oDiv.innerHTML += '<img src=../../img/'+ a +'.jpg/>';
+		a += 1;
+	}
+</script>

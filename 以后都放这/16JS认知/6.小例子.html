@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div {
+				width: 100px;
+				height: 100px;
+				background: red;
+				margin-top: 20px;
+				transition: 1s;
+			}
+		</style>
+	</head>
+	<body>
+		<input type="button" value="点" id="but1" />
+		<input type="button" value="点" id="but2" />
+		<input type="button" value="点" id="but3" />
+		<div id="div1"></div>
+	</body>
+</html>
+<script type="text/javascript">
+	var oDiv = document.getElementById('div1');
+	document.getElementById('but1').onclick = function() {
+		oDiv.style.width = '400px';
+	}
+	document.getElementById('but2').onclick = function() {
+		oDiv.style.height = '400px';
+	}
+	document.getElementById('but3').onclick = function() {
+		oDiv.style.background = 'blue';
+	}
+</script>

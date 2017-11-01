@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div {
+				width: 500px;
+				height: 500px;
+				background: red url(../../img/1.jpg) no-repeat;
+				background-size: 100% 100%;
+				border: 1px solid black;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box"></div>
+	</body>
+</html>
+<script type="text/javascript">
+	/*
+		在JS的属性操作中，不允许出现"-",用驼峰式命名代替
+		如
+			backgroundSize
+			backgroundColor
+			backgroundImage
+			fontSize
+	*/
+	var oDiv = document.getElementById('box');
+	oDiv.onclick = function() {
+		oDiv.style.backgroundSize = '80% 80%';
+	}
+</script>

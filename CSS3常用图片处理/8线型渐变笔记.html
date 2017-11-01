@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			div {
+				width: 800px;
+				height: 200px;
+				margin: 100px auto;
+				background: linear-gradient(30deg,red,yellow,green,blue);
+				/*background: linear-gradient(90deg,
+					red 100px,
+					yellow 180px,
+					green 280px,
+					blue
+				);*/
+			}
+		</style>
+	</head>
+	<body>
+		<!--
+			线型渐变  IE9以下不支持
+			
+				渐变属于背景下的一个属性
+					方法  linear-gradient();
+					写法：
+						比如：background: linear-gradient(90deg,red,yellow,blue);
+					括号里的第一个值是角度
+						第一个值可以是模糊的值，也可以是具体数值
+							模糊的值：
+								to right
+								to lfet
+								to top
+								to bottom
+							具体的角度数值
+								角度是指水平线和渐变线之间的角度，按逆时针方向计算
+									比如：
+										标准
+											0deg  从下到上
+											90deg 从左到右
+										非标准
+											0deg  从左到右
+											90deg 从下到上
+										标准和非标准的换算公式
+											90 - x = y
+											
+											x为标准角度
+											y为非标准角度
+										(参考：渐变角度参考图)
+						从第二个值开始是颜色值，可以通过具体的数值确定颜色渐变的区域，比如
+						background: linear-gradient(90deg,
+							red 100px,
+							yellow 180px,
+							green 280px,
+							blue
+						);
+										(参考：颜色值区域参考图)
+		-->
+		<div></div>
+	</body>
+</html>

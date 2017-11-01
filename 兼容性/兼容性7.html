@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div {
+				background: yellow;
+				border: 1px solid black;
+				/*zoom: 1;*/
+				/*overflow: hidden;*/
+			}
+			#d {
+				width: 100px;
+				height: 100px;
+				background: red;
+				margin: 50px;
+			}
+		</style>
+	</head>
+	<body>
+		<!--
+			在IE下大部分兼容性都是因为haslayout属性的触发问题，尽量触发haslayout属性
+			可以减少很多IE下的兼容性问题
+			再IE下父级有边框时，子元素的margin会失效
+			解决办法：触发父级的haslayout属性
+		-->
+		<div>
+			<div id="d"></div>
+		</div>
+	</body>
+</html>

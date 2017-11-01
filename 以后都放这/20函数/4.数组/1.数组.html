@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script type="text/javascript">
+	/*
+		数组元素添加与删除
+			1.push(): 向数组的最后添加元素
+			2.pop():	删除数组最后一个元素
+			3.unshift(): 向数组的最开始添加元素
+			4.shift():	删除数组第一个元素
+			5.splice():	中间元素的修改
+				三个形参:第一个：替换内容的起始下标  
+					       第二个：被替换内容的长度  (若第二个参数为0，则为添加元素)
+					       第三个：替换的内容(若没写第三个参数，则该函数效果为删除)
+	*/
+//	var arr = [];
+//	arr.push('你好');
+//	arr.push('亚洲');
+//	console.log(arr);
+//
+//	arr.pop();
+//	console.log(arr);
+//
+//	var arr = [];
+//	arr.unshift('你好');
+//	arr.unshift('亚洲');
+//	console.log(arr);
+//
+//	arr.shift();
+//	console.log(arr);
+//
+//	对于中间元素的修改
+//	var arr = ['美国','中国','英国','韩国'];
+//	arr.splice(1,1,'亚洲');
+//	console.log(arr);
+////	对于中间元素的删除
+//	arr.splice(1,1);
+//	console.log(arr);
+////	对于中间元素的添加
+//	arr.splice(1,0,'德国');
+//	console.log(arr); 
+//	
+//	arr = ['美国','中国','英国','英国','韩国'];
+//	for(var i=0;i<arr.length;i++) {
+//		var index = arr[i];
+//		if(index == '英国') {
+//			arr.splice(i,1);
+//			i--;
+//		}
+//	}
+//	console.log(arr);
+	
+	arr = [5,4,3,2,1];
+	
+	for(var i=0;i<arr.length;i++) {
+		for(var j=0;j<arr.length;j++) {
+			if(arr[j] > arr[j+1]) {
+				var index = arr[j];
+				arr[j] = arr[j+1];
+				arr[j+1] = index;
+			}
+		}
+	}
+	
+	console.log(arr);
+</script>

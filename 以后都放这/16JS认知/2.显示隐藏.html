@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			ul {
+				margin: 0;
+				padding: 0;
+				list-style: none;
+			}
+			#box1 {
+				width: 200px;
+				height: 60px;
+				font: 30px/60px "微软雅黑";
+				text-align: center;
+			}
+			#span1 {
+				height: 60px;
+				border: 1px solid black;
+				display: block;
+			}
+			#ul1 {
+				height: 0px;
+				margin-top: 6px;
+				/*display: none;*/
+				overflow: hidden;
+				transition: 1s;
+			}
+			#box1 li {
+				height: 60px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box1">
+			<span id="span1">选项一</span>
+			<ul id="ul1">
+				<li>1</li>
+				<li>2</li>
+				<li>3</li>
+				<li>4</li>
+			</ul>
+		</div>
+	</body>
+	<script type="text/javascript">
+		document.getElementById("box1").onmouseover = function() {
+			document.getElementById("ul1").style.height = "250px";
+			document.getElementById("ul1").style.border = " 1px solid black";
+		}
+		
+		document.getElementById("box1").onmouseout = function() {
+			document.getElementById("ul1").style.height = "0px";
+		}
+	</script>
+</html>

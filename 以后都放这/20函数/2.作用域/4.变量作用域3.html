@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script type="text/javascript">
+	// 如果局部变量和全局变量重名，那么在局部范围内用局部变量，不会影响全局变量
+	// 函数内部定义的变量，预编译就在函数的最开始
+	// 变量查找原则：先看自己的函数里面存不存在这个变量，如果不存在，则去外面查找
+//	var a = 10;
+//	function fn1() {
+//		a = 110;
+//		console.log(a);
+//	}
+//	fn1();
+//	console.log(a);
+
+	var a = 10;
+	var b = 100;
+	function fn1() {
+		console.log(a);
+		
+		function fn2() {
+			
+			console.log(b);
+		}
+		fn2();
+	}
+	
+	fn1();
+	console.log(a);
+</script>

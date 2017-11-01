@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script>
+	/*	
+	函数的传参
+		参数
+			形参
+				变量名就是形参
+				形参的数量是无限的
+			实参
+				函数调用时括号里的值  JS的数据  数字  字符串  布尔  函数  对象
+	传参的目的就是代码重用
+		1.精良保证html代码结构一样
+		2.把核心的程序实现，用函数包起来
+		3.把不一样的地方，通过实参传递
+	*/
+	fn3( 20 ); 
+	fn3('甘氨酸');
+	fn3( function(){
+		alert('函数执行了');
+	} );
+	
+	function fn3( a ) {
+		if( typeof a == 'number' ){
+			alert( a * 100 );
+		}else if( typeof a == 'string' ) {
+			alert( 'asdf' );
+		}else if( typeof a == 'function' ) {
+			a();
+		}
+	}
+</script>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../../css/reset.css"/>
+		<style>
+			ul {
+				width: 1000px;
+				height: 150px;
+				border: 1px solid black;
+				margin: 10px auto;
+				/*box-sizing: border-box;*/
+			}
+			li {
+				height: 150px;
+				border: 1px solid red;
+				float: left;
+				box-sizing: border-box;
+				text-align: center;
+				padding: 20px;
+			}
+			.goods li:nth-child(1) {
+				width: 33.33%;
+			}
+			.goods li:nth-child(2) {
+				width: 16.66%;
+			}
+			.goods li:nth-child(3) {
+				width: 16.66%;
+			}
+			.goods li:nth-child(4) {
+				width: 16.66%;
+			}
+			.goods li:nth-child(5) {
+				width: 16.66%;
+			}
+			#c span {
+				width: 22px;
+				height: 32px;
+				border: 1px solid grey;
+				float: left;
+				text-align: center;
+				font: 12px/32px "微软雅黑";
+			}
+			#c span:hover{
+				cursor: pointer;
+			}
+			#c input {
+				width: 50px;
+				height: 32px;
+				text-align: center;
+				float: left;
+				border: 1px solid grey;
+			}
+		</style>
+	</head>
+	<body>
+		<ul class="goods">
+			<li class="goods_view">1</li>
+			<li class="unit_price">
+				<p>&yen;<span class="u_p">880</span></p>
+			</li>
+			<li class="count">
+				<div id="c">
+					<span class="sub">-</span>
+					<input class="num" type="text" value="1"/>
+					<span class="add">+</span>
+				</div>
+			</li>
+			<li class="cost">
+				<p class="cost_total">&yen;<span class="cost_span"></span></p>
+			</li>
+			<li class="operate">5</li>
+		</ul>
+		<ul class="goods">
+			<li class="goods_view">1</li>
+			<li class="unit_price">
+				<p>&yen;<span class="u_p">1000</span></p>
+			</li>
+			<li class="count">
+				<div id="c">
+					<span class="sub">-</span>
+					<input class="num" type="text" value="1"/>
+					<span class="add">+</span>
+				</div>
+			</li>
+			<li class="cost">
+				<p class="cost_total">&yen;<span class="cost_span"></span></p>
+			</li>
+			<li class="operate">5</li>
+		</ul>
+		<ul class="goods">
+			<li class="goods_view">1</li>
+			<li class="unit_price">
+				<p>&yen;<span class="u_p">1500</span></p>
+			</li>
+			<li class="count">
+				<div id="c">
+					<span class="sub">-</span>
+					<input class="num" type="text" value="1"/>
+					<span class="add">+</span>
+				</div>
+			</li>
+			<li class="cost">
+				<p class="cost_total">&yen;<span class="cost_span"></span></p>
+			</li>
+			<li class="operate">5</li>
+		</ul>
+	</body>
+</html>
+<script>
+	var oSub = document.getElementsByClassName('sub');
+	var oAdd = document.getElementsByClassName('add');
+	var oNum = document.getElementsByClassName('num');
+	var cost = document.getElementsByClassName('cost_span');
+	var price = document.getElementsByClassName('u_p');
+	
+	for(var i=0;i<oSub.length;i++){
+		oAdd[i].index = i;
+		oSub[i].index = i;
+		cost[i].innerHTML = price[i].innerHTML;
+		
+		oSub[i].onclick = function () {
+			var count = Number(oNum[this.index].value);
+			var price_num = Number(price[this.index].innerHTML);
+			if(count == 1){
+				oNum[this.index].value = 1;
+			}else{
+				oNum[this.index].value = count - 1;
+				count = Number(oNum[this.index].value);
+				cost[this.index].innerHTML = count * price_num;
+			}
+		}
+		
+		oAdd[i].onclick = function () {
+			var count = Number(oNum[this.index].value);
+			var price_num = Number(price[this.index].innerHTML);
+			oNum[this.index].value = count + 1;
+			count = Number(oNum[this.index].value);
+			cost[this.index].innerHTML = count * price_num;
+		}
+	}
+
+</script>

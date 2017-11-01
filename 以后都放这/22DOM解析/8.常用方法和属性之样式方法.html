@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#wrap {
+				width: 100px;
+				height: 100px;
+				border: 1px solid black;
+				margin-left: 50px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="wrap"></div>
+	</body>
+</html>
+<script type="text/javascript">
+	/*
+		1.offsetLeft,offsetTop,offsetWidth,offsetHeight
+		2.clientWidth,clientHeight,scrollHeight,scrollWidth,scrollLeft,scrollTop
+		
+		offsetLeft和offsetTop是不包含border
+		offsetWidth,offsetHeight不包含margin
+		clientWidth,clientHeight不包含边框和margin
+	*/
+	var wrap = document.getElementById('wrap');
+	console.log(wrap.offsetLeft);
+	console.log(wrap.clientWidth);
+</script>

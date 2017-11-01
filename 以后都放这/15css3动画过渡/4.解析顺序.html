@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body {
+				height: 500px;
+				border: 1px solid red;
+			}
+			div {
+				width: 100px;
+				height: 100px;
+				margin-top: 100px;
+				background: red;
+				transition: 1s;
+				transform-origin: left top;
+			}
+			body:hover #box1 {
+				transform: scale(2) translate(200px,0);
+			}
+			body:hover #box2 {
+				transform: translate(200px,0) scale(2);
+			}
+		</style>
+	</head>
+	<body>
+		<!--
+			变换原点
+				transform-origin
+					left
+					top
+					right
+					bottom
+					center
+					默认center 当设置相应的值后，会按照乡音的设置的值发生变换
+		-->
+		<div id="box1"></div>
+		<div id="box2"></div>
+	</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#box {
+				width: 300px;
+				height: 300px;
+				background: greenyellow;
+				position: relative;
+			}
+			#wrap {
+				width: 200px;
+				height: 200px;
+				background: red;
+				position: absolute;
+				top: 50px;
+				left: 50px;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<!--
+			事件监听:可以给标签添加多个点击事件
+		-->
+		<div id="box">
+			<div id="wrap"></div>
+		</div>
+	</body>
+</html>
+<script type="text/javascript">
+	var box = document.getElementById('box');
+	var wrap = document.getElementById('wrap');
+	
+	//	IE的事件监听，为了兼容ie10以下浏览器
+	function alert2() {
+		alert('点击box');
+	}
+	
+	//	添加监听，兼容ie10
+//	box.attachEvent('onclick',alert2);
+	//	删除监听，兼容ie10
+//	box.detachEvent('onclick',alert2);
+	
+	//ie与现代浏览器兼容写法
+	if(box.addEventListener) {
+		box.addEventListener('click',alert2,false);
+	}else{
+		box.attachEvent('onclick',alert2);	
+	}
+</script>

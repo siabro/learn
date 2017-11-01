@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.left {
+				width: 100px;
+				height: 100px;
+				background: red;
+				float: left;
+			}
+			
+			.right {
+				width: 200px;
+				height: 100px;
+				background: blue;
+				/*margin-left: 100px;*/
+				float: left;
+			}
+		</style>
+	</head>
+	<body>
+		<!--
+			在IE6.7下元素要通过浮动排在同一排，就需要给这行元素都加浮动
+		-->
+		<div>
+			<div class="left"></div>
+			<div class="right"></div>
+		</div>
+	</body>
+</html>

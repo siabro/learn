@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#btn {
+				width: 100px;
+				height: 100px;
+				background: red;
+				font: 25px/100px "微软雅黑";
+				margin: 0 auto;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="btn"></div>
+	</body>
+</html>
+<script type="text/javascript">
+	var btn = document.querySelector('#btn');
+	
+	// 计时器中的this为window
+	var i = 0;
+	btn.onclick = function() {
+		var timer = window.setInterval(function() {
+			i++;
+			btn.innerHTML = i;
+			if(i == 10) {
+				clearInterval(timer);
+			}
+		},1000);
+	}
+	// 计时器不用的时候一定要清除
+</script>

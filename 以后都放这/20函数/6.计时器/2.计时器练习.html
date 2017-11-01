@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#time {
+				width: 100px;
+				height: 100px;
+				background: red;
+				margin: 0 auto;
+				border: 1px solid black;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="time">5</div>
+	</body>
+</html>
+<script type="text/javascript">
+	var time = document.querySelector('#time');
+	var value = time.innerHTML;
+	
+	var timer = setInterval(function() {
+		value -= 1;
+		time.innerHTML = value;
+		if(value <= 0) {
+			clearInterval(timer);
+		}
+	},1000);
+	
+	
+</script>

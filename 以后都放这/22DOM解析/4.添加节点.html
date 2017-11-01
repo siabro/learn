@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="wrap">
+			<div id="first"></div>
+			<div id="second"></div>
+		</div>
+	</body>
+</html>
+<script type="text/javascript">
+	/*
+		添加标签的函数
+			1.appandChild 
+			2.insertBefore
+			3.repalceChild()
+		删除标签
+			removeChild(被删除的标签)
+	*/
+	
+	var creat = document.createElement('p');
+	creat.innerHTML = '你好';
+	creat.style.color = 'red';
+	
+	var wrap = document.getElementById('wrap');
+	
+	//appandChild : 将标签添加为父节点的最后一个子节点
+//	wrap.appendChild(creat);
+	
+	//insertBefore	将标签添加到某个标签之前
+	//第一个参数:新建的标签	第二个参数:被插入的标签
+	var first = document.getElementById('first');
+	var second = document.getElementById('second');
+//	wrap.insertBefore(creat,first);
+	
+	//repalceChild()	替换某个标签 
+	//第一个参数	: 新建的标签		第二个参数 : 被替换的标签
+	wrap.replaceChild(creat,first);
+	
+	//removeChild(被删除的标签)	    删除标签
+	wrap.removeChild(creat);
+</script>

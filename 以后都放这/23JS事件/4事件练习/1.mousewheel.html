@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="wheel.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+	</body>
+</html>
+<script type="text/javascript">
+	/*
+	// onmousewheel	针对非火狐浏览器
+	window.onmousewheel = function(e) {
+		//	向下滚动wheelDelta	是负值
+		//	向上滚动wheelDelta	是正值
+		var ev = e || window.event;
+		console.log(ev);
+	}
+	
+	//	火狐浏览器滚动方式
+	window.addEventListener('DOMMouseScroll',function(ev) {
+		//	向下滚动detail	是正值
+		//	向上滚动detail	是负值
+		var e = ev || window.event;
+		console.log(e);
+	}, false)
+	*/
+	
+//	var value = wheel(function (value) {
+//		
+//	});
+//	if(value) {
+//		console.log('向下');
+//	}else{
+//		console.log('向上');
+//	}
+
+	wheel(function (value){
+		if(value) {
+			console.log('向下');
+		}else{
+			console.log('向上');
+		}
+	})
+	
+
+</script>

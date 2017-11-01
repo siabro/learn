@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#wrap {
+				width: 100px;
+				height: 100px;
+				background: red;
+				position: absolute;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="wrap"></div>
+	</body>
+</html>
+<script type="text/javascript">
+	var wrap = document.getElementById('wrap');
+	
+	window.onkeydown = function(e) {
+		var ev = e || window.event;
+		var currentLeft = wrap.offsetLeft;
+		var currentTop = wrap.offsetTop;
+//		console.log(ev.keyCode);
+//		console.log(currentLeft);
+		
+		switch (ev.keyCode){
+			case 37: //左 
+				currentLeft -=10;
+				wrap.style.left = currentLeft + 'px';
+				break;
+				
+			case 38: //上
+				currentTop -=10;
+				wrap.style.top = currentTop + 'px';
+				break;
+			
+			case 39: //右
+				currentLeft +=10;
+				wrap.style.left = currentLeft + 'px';
+				break;
+				
+			case 40: //下
+				currentTop +=10;
+				wrap.style.top = currentTop + 'px';
+				break;
+				
+			default:
+				break;
+		}
+	}
+</script>

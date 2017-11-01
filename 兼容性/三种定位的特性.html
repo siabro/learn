@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.box1 {
+				width: 100px;
+				height: 100px;
+				background: red;
+				position: relative;
+			}
+			
+			.box2 {
+				width: 100px;
+				height: 100px;
+				background: yellow;
+			}
+			
+			span {
+				width: 100px;
+				height: 100px;
+				background: red;
+				position: absolute;
+			}
+			.span1 {
+				z-index: 1;
+			}
+			.span2 {
+				z-index: 2;
+			}
+		</style>
+	</head>
+	<body>
+		<!--
+			定位的三种特性
+				相对定位    relative
+					1.不影响元素本身的特性(占着原来的位置)
+					2.不是元素脱离文档流
+					3.提升层级
+					4.无法触发BFC
+				绝对定位    absolute
+					1.使元素完全脱离文档流
+					2.内容撑开宽高
+					3.使元素支持所有CSS样式
+					4.提升层级
+						z-index:数值;   定位层级设置     数值越大 层级越高 
+					5.绝对定位要和相对定位配合使用
+					6.如果有定位父级，针对定位父级发生偏移，没有定位父级，针对document进行偏移
+					7.如果绝对定位的子级有浮动，可以省略清浮动的操作
+				固定定位   fixed
+					1.不兼容IE6
+					2.针对窗口（比body大的层面）进行定位
+					3.如果固定定位的子级有浮动，可以省略清浮动的操作
+		-->
+		<!--<div class="box1">div1</div>
+		<div class="box2">div2</div>-->
+		<span class="span1">span1</span>
+		<span class="span2">span2</span>
+	</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div {
+				width: 80%;
+				height: 200px;
+				background: red;
+				padding-left: 10%;
+				margin: 0 auto;
+			}
+			@media screen and (max-width:500px) {
+				div {
+					height: 300px;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<!--
+			响应式布局
+				百分比布局
+				
+					布局百分比
+						width
+						padding-left
+						padding-right
+						margin-left
+						margin-right
+						left
+						right
+						
+						百分比公式		目标元素的宽度/父级元素的宽度 = 百分比宽度
+					
+						高度的增加或者减少需要配合媒体查询
+							高度：
+								height
+								padding-top
+								padding-bottom
+								margin-top
+								margin-bottom
+								top
+								bottom
+						
+							@media screen and() {}
+					
+					图片百分比
+						图片的宽度和高度比较弹性化
+							图片如果不设置宽度和高度，会显示原始大小，当设置了图片的宽度百分比时，宽度发生变化时，高度也会等比缩放
+							图片有时太大，会超出，最好设置一个上线，max-width或者max-height
+					
+					文字百分比
+						em 和 rem
+						em：父级的文字大小的倍数	父级大小是多少，决定子级吻戏em的大小
+						
+						rem	针对html文字字体的大小
+		-->
+		<div>0</div>
+	</body>
+</html>

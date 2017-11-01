@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#wrap {
+				width: 100px;
+				height: 100px;
+				position: absolute;
+				top: 300px;
+				left: 400px;
+				border: 1px solid black;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="wrap"></div>
+	</body>
+</html>
+<script type="text/javascript">
+	/*
+	获取left、top、width、height的值
+		只有这四个值能用offset开头的方法获取，直接获得数字
+		只能获取，不能赋值
+		注意：如果标签为display:none 则不能获取到值，只能用getStyle方法
+		offsetLeft	offsetTop	offsetWidth	   offsetHeight
+	*/
+	
+	wrap = document.getElementById('wrap');
+
+//	var left = wrap.offsetLeft;
+//	console.log(left);
+//	
+//	var myTop = wrap.offsetTop;
+//	console.log(myTop);
+//
+//	var width = wrap.offsetWidth;
+//	console.log(width);
+	
+	var height = wrap.offsetHeight;
+	console.log(height);
+</script>

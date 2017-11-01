@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../../css/reset.css"/>
+		<style type="text/css">
+			#box {
+				width: 200px;
+				margin: 10px auto;
+			}
+			span {
+				height: 30px;
+				border: 1px solid black;
+				text-align: center;
+				font: 20px/30px "微软雅黑";
+				display: block;
+			}
+			ul {
+				border: 1px solid black;
+				display: none;
+			}
+			li {
+				height: 30px;
+				text-align: center;
+				font: 20px/30px "微软雅黑";
+			}
+		</style>
+		<script type="text/javascript">
+			window.onload = function() {
+				var oDiv = document.getElementById('box');
+				var oUl = document.getElementsByTagName('ul')[0];
+				var a = true;
+				//  开关，通过布尔值的变化，让代码在if的括号和else的括号里进行切换执行
+				oDiv.onclick = function() {
+					if(a == true) {
+						oUl.style.display = 'block';
+						a = false;
+					}else{
+						oUl.style.display = 'none';
+						a = true;
+					}
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<div id="box">
+			<span>点我</span>
+			<ul>
+				<li>1</li>
+				<li>2</li>
+				<li>3</li>
+				<li>4</li>
+			</ul>
+		</div>
+	</body>
+</html>

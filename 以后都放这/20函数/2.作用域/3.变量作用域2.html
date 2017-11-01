@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script>
+	//全局变量:在script标签下定义的变量，统称为全局变量，全局变量可以在任何函数中使用
+	//局部变量:只在函数内部定义的变量
+	//在任何地方，对未声明的变量赋值，默认转换为全局变量
+	var a = 0;	//全局变量
+	var b = 100;	//全局变量
+	function fn1() {
+		var c = 10;
+		d = 123;
+		console.log(a);
+		console.log(b);
+		console.log(c);
+		console.log(d);
+	}
+	fn1();
+	console.log(a);
+	console.log(d);
+</script>

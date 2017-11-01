@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			/*a {
+				font-size: 100px;
+				text-decoration: none;
+			}
+			a:link { color: red;}
+			a:visited { color: yellow;}
+			a:hover {color:blue;}
+			a:active {color: black;}
+			*/
+			/*p:nth-child(2) {background: red;}*/
+			p:nth-of-type(n) {background: red;}
+			p:nth-of-type(2n-1) {background: yellow;}
+			/*
+				伪类选择器
+					选择属于父级下的第n个元素，并且必须是p标签，直到匹配位置，否则不生效
+						p:nth-child(n) {background: red;} 	n可以用来计算
+					选择属于父级下的第1个元素，并且必须是p标签，否则不生效
+						p:first-child {background:red;}
+					选择属于父级下的最后1个元素，并且必须是p标签，否则不生效
+						p:last-child {background:red;}
+						
+					选择属于其父级下的第n个元素，并且一定会是p标签
+						p:nth-of-type(n) {background: red;} 	n可以用来计算
+					选择属于其父级下的第一个元素，并且一定会匹配p标签
+						p:first-of-type{background:red}
+					选择属于其父级下的最后一个元素，并且一定会匹配p标签
+						p:last-of-type{background:red}
+			*/
+		</style>
+	</head>
+	<body>
+		<!--
+			伪类 : 是一种特殊的属性，可以理解为一种特殊的状态  love  hate  爱恨记忆法
+		-->
+		<div>
+			<h1>h1</h1>
+			<p>p1</p>
+			<p>p2</p>
+			<p>p3</p>
+			<p>p2</p>
+			<p>p3</p>
+			<p>p2</p>
+			<p>p3</p>
+		</div>
+	</body>
+</html>

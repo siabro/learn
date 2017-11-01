@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<!--<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>-->
+		<style type="text/css">
+			#btn {
+				width: 100px;
+				height: 100px;
+				background: red;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="btn"></div>
+	</body>
+</html>
+<script type="text/javascript">
+	//	创建计时器
+	//	计时器是属于window的函数，所有属于window的函数都可以吧window省略
+	
+	var timer = window.setInterval(function() {console.log(1);},1000);
+	var btn = document.querySelector('#btn');
+	
+	btn.onclick = function() {
+		//	清除计时器
+		clearInterval(timer);
+	}
+	
+</script>

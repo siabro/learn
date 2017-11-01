@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script>
+	/*
+		NaN  是一个不是数字的数字类型		Not a Number
+	 	NaN  只要出现就证明运算或者数据类型转换出现了问题	 
+	 	
+	 		NaN + - * / % 任何都是NaN
+	 		NaN  是  false值
+	 		NaN	 自己都不相等
+	*/
+	
+	var a = Number('100px');
+	alert(a);
+	
+	var a = parseInt('a100');
+	
+	var a = '100px';
+	var b = 10;
+	
+	alert( a - b );
+	
+	if (a == a){
+		alert('真');
+	}else{
+		alert('假');
+	}
+</script>

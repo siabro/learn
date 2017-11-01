@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div>11</div>
+	</body>
+</html>
+<script>
+	/*
+		1强制类型转换
+			Number()
+				可以转换纯数字的字符串，支持小数，不可以转换不是纯数字的字符串，会出现NaN
+	 		parseInt()
+	 			可以转换不是纯数字的字符串，但是第一个一定要是数字，否则会出现NaN，而且遇到不是
+	 			数字的字符，后面直接切掉，把前面的数字的字符串转换成数字类型，不支持小叔
+	 		parseFloat()
+	 			和  parseInt() 的区别就是支持小数
+	 			
+	 		NaN  是一个不是数字的数字类型		Not a Number
+	 		NaN  只要出现就证明运算或者数据类型转换出现了问题		
+	*/
+	
+	var oDiv = document.getElementsByTagName('div')[0];
+//	alert(typeof oDiv.innerHTML);
+//	alert( Number(oDiv.innerHTML) + 86);
+
+	var i = '100.110001';
+	alert( Number(i) );
+	
+//	alert( parseInt(i) );
+//	alert( typeof parseInt(i) );
+
+//	alert( parseFloat(i) );
+//	alert( typeof parseFloat(i) );
+</script>

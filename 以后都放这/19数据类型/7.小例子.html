@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="text" />
+		<input type="button" value="判断" />
+	</body>
+</html>
+<script>
+	var oInp = document.getElementsByTagName('input');
+	
+	oInp[1].onclick = function() {
+		if (oInp[0].value == '') {
+			alert('没有输入');
+		}else{
+			if(isNaN( oInp[0].value )){
+				alert('输入不是数字');
+			}else{
+				alert('输入的是数字');
+			}
+		}
+	}
+</script>

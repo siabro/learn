@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../../css/reset.css" />
+		<style type="text/css">
+			.content {
+				width: 600px;
+				height: 350px;
+				margin: 10px auto;
+				position: relative;
+				overflow: hidden;
+				box-sizing: border-box;
+			}
+			
+			#img_cont {
+				width: 4800px;
+				height: 350px;
+				position: absolute;
+				left: 0px;
+			}
+			
+			.content:hover .switch {
+				display: block;
+			}
+			
+			.img {
+				width: 600px;
+				height: 350px;
+				float: left;
+				box-sizing: border-box;
+			}
+			
+			.img1 {
+				left: 0;
+			}
+			
+			.img2 {
+				left: 600px;
+			}
+			
+			.img3 {
+				left: 1200px;
+			}
+			
+			.img4 {
+				left: 1800px;
+			}
+			
+			.img5 {
+				left: 2400px;
+			}
+			
+			.img img {
+				width: 100%;
+				height: 100%;
+			}
+			
+			.switch {
+				width: 30px;
+				height: 45px;
+				background: rgba(0, 0, 0, 0.3);
+				position: absolute;
+				top: 175px;
+				text-align: center;
+				display: none;
+			}
+			
+			.to_left {
+				left: 0;
+			}
+			
+			.to_right {
+				right: 0;
+			}
+			
+			@font-face {
+				font-family: "iconfont";
+				src: url('../../img/taobao/font/iconfont.eot?t=1508037716398');
+				/* IE9*/
+				src: url('../../img/taobao/font/iconfont.eot?t=1508037716398#iefix') format('embedded-opentype'), /* IE6-IE8 */
+				url('../../img/taobao/font/iconfont.ttf?t=1508037716398') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+				url('../../img/taobao/font/iconfont.svg?t=1508037716398#iconfont') format('svg');
+				/* iOS 4.1- */
+			}
+			
+			.iconfont {
+				width: 30px;
+				height: 45px;
+				font-family: "iconfont" !important;
+				font-size: 16px;
+				font-style: normal;
+				line-height: 45px;
+				color: white;
+			}
+			
+			.left:before {
+				content: "\f0343";
+			}
+			
+			.right:before {
+				content: "\f0344";
+			}
+			
+			.img_list {
+				position: absolute;
+				bottom: 20px;
+				left: 50%;
+				margin-left: -40px;
+				overflow: hidden;
+				border-radius: 10px;
+				background-color: rgba(255, 255, 255, 0.3);
+				text-align: center;
+				box-sizing: border-box;
+			}
+			
+			.img_list li {
+				display: inline-block;
+				margin: 2px;
+				background: #B7B7B7;
+				border-radius: 50%;
+			}
+			
+			.img_list a {
+				width: 9px;
+				height: 0px;
+				padding-top: 9px;
+				display: block;
+			}
+			
+			.img_list .active {
+				background: orangered;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="content">
+			<div id="img_cont">
+				<div class="img1 img">
+					<a href="#"><img src="../../img/taobao/1.jpg" /></a>
+				</div>
+				<div class="img2 img">
+					<a href="#"><img src="../../img/taobao/2.jpg" /></a>
+				</div>
+				<div class="img3 img">
+					<a href="#"><img src="../../img/taobao/3.jpg" /></a>
+				</div>
+				<div class="img4 img">
+					<a href="#"><img src="../../img/taobao/4.jpg" /></a>
+				</div>
+				<div class="img5 img">
+					<a href="#"><img src="../../img/taobao/5.jpg" /></a>
+				</div>
+				<div class="img1 img">
+					<a href="#"><img src="../../img/taobao/6.jpg" /></a>
+				</div>
+				<div class="img1 img">
+					<a href="#"><img src="../../img/taobao/1.jpg" /></a>
+				</div>
+			</div>
+			<div class="to_left switch">
+				<i class="iconfont left"></i>
+			</div>
+			<div class="to_right switch">
+				<i class="iconfont right"></i>
+			</div>
+			<div>
+				<ul class="img_list">
+					<li class="active">
+						<a href="#"></a>
+					</li>
+					<li>
+						<a href="#"></a>
+					</li>
+					<li>
+						<a href="#"></a>
+					</li>
+					<li>
+						<a href="#"></a>
+					</li>
+					<li>
+						<a href="#"></a>
+					</li>
+					<li>
+						<a href="#"></a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</body>
+
+</html>
+<script type="text/javascript">
+	function getStyle(obj, attr) {
+		return obj.currentStyle ? obj.currentStyle[attr] : getComputedStyle(obj, null)[attr];
+	}
+
+	var oCont = document.getElementsByClassName('content')[0];
+	var oDiv = document.getElementById('img_cont');
+	var oRight = document.getElementsByClassName('to_right')[0];
+	var oLeft = document.getElementsByClassName('to_left')[0];
+	var aImg = document.getElementsByTagName('img');
+	var oDivLeft = parseInt(getStyle(oDiv, 'left'));
+	var oLi = document.getElementsByTagName('li');
+	var l = 0;
+	var flag = true;
+
+	//点击进入下一张
+	oRight.onclick = function() {
+		l -= 600;
+
+		if(l == -4200) {
+			l = -600;
+			oDiv.style.left = 0 + 'px';
+		}
+
+		move.speedDown({
+			dom: oDiv,
+			attr: {
+				left: l
+			},
+			step: 10
+		})
+		//焦点切换
+		//所有焦点非高亮
+		for(var i = 0; i < oLi.length; i++) {
+			oLi[i].className = '';
+		}
+		//判断大图是否走到最后一张
+		if(-l / 600 == 6) {
+			oLi[0].className = 'active';
+		}
+		//当前位置焦点高亮
+		if(oLi[-l / 600]) {
+			oLi[-l / 600].className = 'active';
+		}
+		//阻止文本被选中
+		this.onselectstart = function() {
+			return false;
+		}
+	}
+	//点击进入前一张
+	oLeft.onclick = function() {
+		l += 600;
+
+		if(l > 0) {
+			l = -3000;
+			oDiv.style.left = -3600 + 'px';
+		}
+
+		move.speedDown({
+			dom: oDiv,
+			attr: {
+				left: l
+			},
+			step: 10
+		})
+
+		//焦点切换
+		//所有焦点非高亮
+		for(var i = 0; i < oLi.length; i++) {
+			oLi[i].className = '';
+		}
+		//判断大图是否走到最后一张
+		if(-l / 600 == 6) {
+			oLi[0].className = 'active';
+		}
+		//当前位置焦点高亮
+		if(oLi[-l / 600]) {
+			oLi[-l / 600].className = 'active';
+		}
+		//阻止文本被选中
+		this.onselectstart = function() {
+			return false;
+		}
+	}
+
+	//自动轮播
+	var timer = setTimeout(scroll, 1000);
+	//自动轮播函数
+	function scroll() {
+		l -= 600;
+		//判断是否滚到最后一张
+		if(l == -4200) {
+			l = -600;
+			oDiv.style.left = 0;
+		}
+		//大图调用运动函数
+		move.speedDown({
+			dom: oDiv,
+			attr: {
+				left: l
+			},
+			step: 10,
+			callback: function() {
+				//设置循环
+				if(flag == true) {
+					clearTimeout(timer);
+					timer = setTimeout(scroll, 1000);
+				}
+			}
+		})
+		//焦点切换
+		//所有焦点非高亮
+		for(var i = 0; i < oLi.length; i++) {
+			oLi[i].className = '';
+		}
+		//判断大图是否走到最后一张
+		if(-l / 600 == oLi.length) {
+			oLi[0].className = 'active';
+		}
+		//当前位置焦点高亮
+		if(oLi[-l / 600]) {
+			oLi[-l / 600].className = 'active';
+		}
+	}
+	//点击切换
+	for(var i = 0; i < oLi.length; i++) {
+		oLi[i].index = i;
+		oLi[i].onmouseover = function() {
+			//停止自动轮播
+			clearTimeout(timer);
+			//保证轮播从当前位置开始
+			l = this.index * -600;
+			//设置焦点高亮
+			for(var i = 0; i < oLi.length; i++) {
+				oLi[i].className = '';
+			}
+			this.className = 'active';
+			//调用运动函数，大图切换
+			move.speedDown({
+				dom: oDiv,
+				attr: {
+					left: this.index * -600
+				},
+				step: 10
+			})
+		}
+	}
+
+	//滑入停止
+	oCont.onmouseover = function() {
+		flag = false;
+		clearTimeout(timer);
+	}
+	//滑出循环轮播
+	oCont.onmouseout = function() {
+		timer = setTimeout(scroll, 1000);
+		flag = true;
+	}
+	var move = {
+		//获取元素样式
+		getStyle: function(obj, attr) {
+			return obj.currentStyle ? obj.currentStyle[attr] : window.getComputedStyle(obj, false)[attr];
+		},
+		//缓冲运动
+		speedDown: function(opt) {
+			//保存this
+			var self = this;
+			//清除已有计时器
+			clearInterval(opt.dom.timer);
+			//添加计时器
+			opt.dom.timer = setInterval(function() {
+				//假设动画结束
+				opt.dom.isMove = true;
+				for(key in opt.attr) {
+					if(key == 'opacity') {
+						var start = parseFloat(self.getStyle(opt.dom, key)) * 100;
+					} else {
+						var start = parseFloat(self.getStyle(opt.dom, key));
+					}
+					var len = ((opt.attr[key] - start) / opt.step) > 0 ? Math.ceil((opt.attr[key] - start) / opt.step) : Math.floor((opt.attr[key] - start) / opt.step);
+
+					if(start != opt.attr[key]) {
+						if(key == 'opacity') {
+							//关闭动画结束的开关
+							opt.dom.isMove = false;
+							opt.dom.style.opacity = (start + len) / 100;
+							opt.dom.style.filter = 'alpha(opacity=' + parseFloat(start + len) + ')';
+						} else {
+							//关闭动画结束的开关
+							opt.dom.isMove = false;
+							opt.dom.style[key] = (start + len) + 'px';
+						}
+					}
+					//判断是否结束动画
+					if(opt.dom.isMove) {
+						clearInterval(opt.dom.timer);
+						opt.callback ? opt.callback() : null;
+					}
+				}
+
+			}, 10)
+		}
+	}
+</script>

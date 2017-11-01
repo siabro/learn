@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			input {
+				margin: 0;
+				padding: 0;
+				outline: none;
+			}
+			
+			option {
+				padding: 0;
+			}
+			
+			textarea {
+				padding: 0;
+				resize: none;
+				outline: none;
+			}
+		</style>
+	</head>
+	<body>
+		<form action="http://baidu.com" method="post" target="_blank">
+			用户名:<input type="text" value="123456" name="usernam"/><br />
+			密码:<input type="password" name="pwd" value="" /><br />
+			性别:男 <input type="radio" name="sex" id="" value="man" />
+				 女 <input type="radio" name="sex" id="" value="woman" /><br />
+			兴趣爱好：
+			吃<input type="checkbox" name="hobby" id="hobby" value="eat" />
+			喝<input type="checkbox" name="hobby" id="hobby" value="drink" />
+			拉<input type="checkbox" name="hobby" id="hobby" value="shit" />
+			撒<input type="checkbox" name="hobby" id="hobby" value="pee" />
+			睡<input type="checkbox" name="hobby" id="hobby" value="sleep" /><br />
+			上传<input type="file" name="upload" id="upload" value="" /><br />
+			按钮 <input type="button" name="anniu" id="" value="1" /><br />
+			隐藏 <input type="hidden" name="yincang" id="yincang" value="nothing" /><br />
+			<input type="reset" name="reset"/><br />
+			<select name="area">
+				<option value="hebei">河北</option>
+				<option value="北京">北京</option>
+				<option value="上海">上海</option>
+				<option value="广州">广州</option>
+				<option value="大连">大连</option>
+			</select>
+			<br />
+			<textarea name="wenben" rows="10" cols="30">中国人不是东亚病夫</textarea>
+			<br />
+			<input type="submit"/>
+		</form>
+	</body>
+</html>

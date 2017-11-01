@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.box1 {
+				width: 300px;
+				height: 300px;
+				border: 5px solid red;
+				margin: 0 auto;
+				position: relative;
+				/*left: 100px;*/
+			}
+			
+			.box2 {
+				width: 100px;
+				height: 100px;
+				background: yellow;
+				position: fixed;
+				left: 0px;
+				top: 0px;
+			}
+		</style>
+	</head>
+	<body>
+		<!--
+			定位：把一个元素按照一定的凡是定到页面的某一位置
+			position
+				相对定位    relative    针对自己本身的位置进行定位
+				绝对定位    absolute	        针对有定位的父级进行定位,如果父级没有定位，会找父级的父级定位
+								        若都没有，则针对document进行定位
+								        绝对定位即使没有初始值，也要设置值    
+				固定定位    fixed		        针对页面窗口进行定位
+			偏移量
+				left
+				top
+				right
+				bottom
+					left、top比right、bottom的优先级要高
+		-->
+		<div class="box1">
+			<div class="box2"></div>
+		</div>
+	</body>
+</html>

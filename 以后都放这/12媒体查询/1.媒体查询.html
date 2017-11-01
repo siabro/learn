@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div {
+				width: 1200px;
+				height: 300px;
+				background: red;
+				margin: 0 auto;
+				border: 10px solid greenyellow;
+			}
+			
+			@media screen and (max-width:960px) {
+				div {
+					width: 800px;
+					height: 500px;
+					border: 20px solid blue;
+				}
+			}
+			
+			@media screen and (max-width:460px) {
+				div {
+					width: 300px;
+					height: 600px;
+					border: 30px solid yellow;
+					background: #000;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<!--
+			当屏幕发生变化，根据设置的最大宽度或最小宽度时，读取大括号中的代码，如下：
+				@media screen and (当屏幕发生变化到达某个值的时候  比如：max-width:960px) {
+					会执行以下代码
+					div {
+						width: 300px;
+						height: 600px;
+						border: 30px solid yellow;
+						background: #000;
+					}
+				}
+		-->
+		<div></div>
+	</body>
+</html>

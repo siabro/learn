@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#wrap {
+				width: 200px;
+				height: 250px;
+				background: red;
+				margin: 0 auto;
+			}
+			.flo {
+				width: 200px;
+				height: 250px;
+				background: greenyellow;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="wrap">
+		</div>
+	</body>
+</html>
+<script type="text/javascript">
+	var wrap = document.getElementById('wrap');
+	
+	wrap.addEventListener('mouseover', function(){
+		var div = document.createElement('div');
+		div.className = 'flo';
+		wrap.appendChild(div);
+		//	当移入添加子标签时会触发事件冒泡，要清除子标签的事件
+		div.addEventListener('mouseover', function(ev) {
+			if(ev.stopPropagation) {
+				ev.stopPropagation();
+			}else{
+				ev.cancelBubble = true;
+			}	
+		}, false)
+		//	当移入时会触发父标签的mouseout事件，所以移出事件要添加给子标签
+		div.addEventListener('mouseout', function() {
+			wrap.removeChild(this);
+		}, false);
+		
+	}, false);
+	
+	
+</script>

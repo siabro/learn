@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>鼠标事件</title>
+		<style type="text/css">
+			#wrap {
+				width: 100px;
+				height: 100px;
+				background: red;
+				position: absolute;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="wrap"></div>
+	</body>
+</html>
+<script type="text/javascript">
+	/*
+		事件分为：鼠标事件、键盘事件、触摸事件
+			鼠标事件：
+				1.点击	onclick
+				2.滚轮	onmousewheel
+				3.右键	oncontextmenu
+				4.鼠标左键按下	onmousedown
+				5.鼠标左键按起 	onmouseup
+				6.鼠标移动		onmousemove
+		所有的事件都有事件对象   ev  (可传递ev参数)
+	*/
+	
+	var wrap = document.getElementById('wrap');
+	
+//	wrap.onclick = function(ev) {
+//		var e = ev || window.event; 
+//		console.log(e);
+//	}
+	//	鼠标滚动事件
+//	wrap.onmousewheel = function() {
+//		console.log('1');
+//	}
+	//	右键
+//	wrap.oncontextmenu = function(ev) {
+//		var e = ev || window.event;
+//		console.log(1);
+//		//取消默认事件
+//		return false;
+//	}
+	//	左键按下
+//	wrap.onmousedown = function() {
+//		console.log(1);
+//	}
+	//	左键按起
+//	wrap.onmouseup = function() {
+//		console.log(1);
+//	}
+	
+</script>

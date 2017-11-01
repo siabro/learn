@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			/*div>span {
+				border: 1px solid red;
+				background: yellow;
+			}*/
+			/*
+				子选择器： >
+					作用范围：div下的span可以享受样式， p里的不享受 ，因为p中的为孙代
+			*/
+			/*p+span {
+				border: 1px solid red;
+				background: yellow;
+			}*/
+			/*
+			 	相邻兄弟选择器：  +
+			 		作用范围: 可以选择相邻的两个元素，元素一定要有同一个父级，+ 后的元素享受样式
+			*/
+			p~span {
+				border: 1px solid red;
+				background: yellow;
+			}
+			/*
+				同级元素通用选择器:	~
+					作用范围：所有形同父级中，位于p标签之后的同级的    span 标签享受样式
+			*/
+			
+		</style>
+	</head>
+	<body>
+		<!--<div>
+			<p>
+				<span>我是P里的span</span>
+			</p>
+			<span>我是div里的span</span>
+			<span>我是div里的span</span>
+			<span>我是div里的span</span>
+		</div>
+		<div>
+			<span>我是相邻p的span</span>
+			<p>
+				我是P
+			</p>
+			<span>我是相邻p的span</span>
+			<span>我不是相邻的span</span>
+		</div>
+		<div>
+			<p>
+				我是P
+			</p>
+			<strong>我是相邻p的strong</strong>
+			<span>我不是相邻的span</span>
+		</div>-->
+		<!--<div>
+			<span>我是同级P之前的span</span>
+			<span>我是同级P之前的span</span>
+			<span>我是同级P之前的span</span>
+			<p>我是p</p>
+			<ul>
+				<li>
+					<span>我是之后的li里的span</span>
+				</li>
+			</ul>
+			<h2>
+				<span>我是之后的h2里的span</span>
+			</h2>
+			<span>我是同级p之后的span</span>
+			<span>我是同级p之后的span</span>
+			<span>我是同级p之后的span</span>
+		</div>-->
+	</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.box {
+				width: 200px;
+				height: 32px;
+				border: 1px solid #000;
+			}
+			
+			input {
+				width: 100px;
+				height: 30px;
+				border: 1px solid blue;
+				margin: 0;
+				padding: 0;
+				float: left;
+			}
+		</style>
+	</head>
+	<body>
+		<!--
+			在IE6、7下输入型表单标签空间上下会有1px的间隙
+			处理方法：给input加浮动
+		-->
+		<div class="box">
+			<input type="text" />
+		</div>
+	</body>
+</html>

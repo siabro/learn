@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#box {
+				width: 300px;
+				height: 300px;
+				border: 1px solid red;
+				position: relative;
+				border-radius: 10px;
+				overflow: hidden;
+				margin: 0 auto;
+			}
+			#cont {
+				width: 260px;
+				position: absolute;
+				left: 10px;
+			}
+			#slider {
+				width: 20px;
+				height: 100%;
+				position: absolute;
+				right: 0;
+				background: darkgrey;
+				border-radius: 10px;
+			}
+			#scroll {
+				height: 50px;
+				width: 20px;
+				border-radius: 10px;
+				position: absolute;
+				background: deepskyblue;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<div id="cont">“‘祖国疆域上的一草一木，我们都要看好守好。’总书记给我们回信中的这句话
+				，更坚定了我们守边的信心和决心。”10月29日上午10时50分许，当习近平总书记的回信送到
+				西藏自治区隆子县玉麦乡牧民卓嘎、央宗姐妹手中时，年过半百的姐妹俩一时激动得不知说啥
+				才好。“共产党就是我们心中的红太阳。习近平总书记回信中的每个字，都说到了我们边疆群众
+				的心坎上。我们一定让总书记放心，我们不但能看好守好祖国的一草一木，而且一定能把玉麦建
+				成幸福、美丽的小康乡！”姐姐卓嘎动情地说，“总书记工作很忙，我们写信的时候，真的没想到
+				他这么快就给我们回信。”玉麦地处祖国西南边陲，1962年至1996年的34年间，卓嘎姐妹在父亲
+				桑杰曲巴的带领下，都加入了中国共产党，并组成了“三人乡”。半个多世纪来，父女三人以放牧
+				为生，守护着祖国数千平方公里的国土。近年来，随着西藏边境小康村建设的开展，如今的玉麦
+				乡已经有了9户32人，建立起完备的乡级基层组织，人烟稀少的广袤土地也有了公安边防部队驻守
+				。已从乡领导岗位退下来的卓嘎、央宗姐妹，如今仍然心系边防。29日上午，当玉麦乡党支部书记
+				达娃把习近平总书记的回信，用藏语一句句读给她们听时，姐妹俩说得最多的，还是边境公路建设
+				、群众如何脱贫致富。被险峻的喜马拉雅山脉包裹的玉麦乡，离隆子县城的直线距离不过40公里，
+				但乡亲们要去县城，必须翻过两座海拔5000多米的雪山，山高谷深，一趟要走十几个小时。更让常
+				人难以忍受的是，这里每年260多天都下雨雪，每年11月初到次年5月底大雪封山，在这里坚守的人
+				们，必须忍耐六七个月与外界隔绝的孤苦。</div>
+			<div id="slider">
+				<div id="scroll"></div>
+			</div>
+		</div>
+	</body>
+</html>
+<script type="text/javascript">
+	var box = document.getElementById('box');
+	var cont = document.getElementById('cont');
+	var slider = document.getElementById('slider');
+	var scroll = document.getElementById('scroll');
+	var scrollMaxHeight = slider.offsetHeight - scroll.offsetHeight;
+	//	文本可滚动的高度
+	var contMaxHeight = cont.offsetHeight - box.offsetHeight;
+	//滚动条滚动到的位置
+	var y = 0;
+	//	文本移动
+	function move() {
+		scroll.style.top = y + 'px';
+		//	文本内容可滚动的高度 / 滚动条可滚动的高度 * 滚动条滚动的距离
+		var scale = contMaxHeight / scrollMaxHeight;
+		var value = y * scale;
+		cont.style.top = -value + 'px';
+	}
+	//	点击能拖拽滚动条
+	scroll.onmousedown = function(ev) {
+		var e = ev || window.event;
+		var currentY = ev.offsetY;
+		window.onmousemove = function(ev) {
+			var e = ev || window.event;
+			var offY = ev.clientY;
+			y = offY - currentY;
+			if( offY - currentY <= 0) {
+				y = 0;
+			}else if(offY - currentY >=  scrollMaxHeight) {
+				y = scrollMaxHeight;
+			}
+			move();
+		}
+		window.onmouseup = function() {
+			//	鼠标抬起，取消移动事件
+			window.onmousemove = null;
+		}
+		return false;
+	}
+</script>

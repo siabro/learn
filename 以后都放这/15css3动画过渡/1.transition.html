@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body {
+				height: 500px;
+				border: 1px solid red;
+				position: relative;
+			}
+			
+		div {
+			width: 100px;
+			height: 100px;
+			background: red;
+			position: absolute;
+			top: 0;
+			left: 0;
+			transition: 1s all ease-in-out;
+		}
+		
+		body:hover div {
+			/*width: 400px;
+			height: 400px;*/
+			top: 0;
+			left: 800px;
+			background: blue;
+		}
+		</style>
+	</head>
+	<body>
+		<!--
+			过渡 	就是从一个值到另一个值之间的过程，就是过渡
+				transition
+					如 : transition: 1s 1s all ease;后三个值可以省略
+					第一个值:	过渡的总时间	单位是s或者ms
+					第二个只:	延时过度的时间	单位是s或者ms
+					第三个值:	需要过渡的样式
+					第四个值:	过渡的方式
+						linear		匀速
+						ease		慢速开始，然后慢慢变快
+						ease-in		慢速开始
+						ease-out	慢慢结束
+						ease-in-out	开始和结束都慢
+						cubic-bezier(1,0,1,0)	贝瑟尔曲线
+		-->
+		<div></div>
+	</body>
+</html>

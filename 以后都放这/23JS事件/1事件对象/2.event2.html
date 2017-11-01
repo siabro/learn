@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#box {
+				width: 100px;
+				height: 100px;
+				background: red;
+				position: absolute;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box"></div>
+	</body>
+</html>
+<script type="text/javascript">
+	var box = document.getElementById('box');
+	window.onclick = function(ev) {
+		var e = ev || window.event;
+		box.style.left = e.offsetX - box.offsetWidth/2 + 'px';
+		box.style.top = e.offsetY - box.offsetHeight/2 + 'px';
+		// offsetWidth、box.offsetHeight分别获得标签本身的宽和高，得到的是数字
+	}
+	
+	
+</script>

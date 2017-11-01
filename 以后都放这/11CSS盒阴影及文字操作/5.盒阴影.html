@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div {
+				width: 300px;
+				height: 300px;
+				border: 1px solid red;
+				margin: 200px auto;
+				box-shadow: inset 20px 20px 30px red,inset -20px -20px 30px red;
+			}
+			div:hover {
+				box-shadow: inset 20px 20px 30px red,inset -20px -20px 30px red;
+			}
+		</style>
+	</head>
+	<body>
+		<!--
+			盒阴影   不兼容IE9以下  
+				box-shdaow
+				第一个值：默认省略或者inset  省略即为默认
+					默认省略，就是外面
+					inset    就是里面
+				第二个值：具体的数值  可以是正数，也可以是负数  为盒子的阴影X轴的大小
+				第三个值：具体的数值  可以是正数，也可以是负数  为盒子的阴影Y轴的大小
+				第四个值：为盒子阴影模糊面积
+						  具体的数值  可以为正数, 不可以为负数  可以省略，省略后没有模糊面积
+				第五个值：具体的颜色值，英文单词  十六进制  rgb  rgba
+				
+			盒阴影可以不断的添加，中间用逗号隔开
+		-->
+		<div></div>
+	</body>
+</html>

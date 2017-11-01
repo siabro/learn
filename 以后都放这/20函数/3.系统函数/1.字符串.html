@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script type="text/javascript">
+	/*
+		字符串函数
+			增	删	 改	查
+				增加和删除都会得到一个新的结果，不会修改原来的字符串
+				所以必须有返回值
+			
+			1.增
+				通过+号进行拼接
+				concat(),必须有返回值
+			2.删除
+				replace() : 替换字符串
+				split() : 将字符串通过固定的格式改为数组
+			4.改
+				replace();
+			3.查
+				查找每一个字符	charAt()
+				查找某一段字符串	search()
+				indexOF()
+	*/
+	// 增
+	var a = 'hello';
+	var b = 'world';
+	var str = a.concat(b);
+	console.log(str);
+	// 删
+	var c = 'hello亚洲';
+	var str = c.replace('hello','');
+	console.log(str);
+	//改， replace() : 替换字符串
+	var str1 = c.replace('hello','你好');
+	console.log(str1);
+	// split()
+	var d = '1020304';
+	var arr = d.split('0');
+	console.log(arr);
+	查 		
+		1.查找每一个字符，charAt() 通过下标查找每一个字符
+	var str3 = 'abcdefghi';
+	for(var i=0;i<str3.length;i++) {
+		var a = str3.charAt(i);
+		console.log(a);
+	}
+	//	2.查找某一段字符串,search() 只能获得被查找到的字符串对应的下标开头
+	var str4 = 'hello nihoa yazhou';
+	var index = str4.search('o');
+	console.log(index);
+	
+	var num = 0;
+	var str5 = 'nihao renyazhouh';
+	for (var i=0;i<str4.length;i++) {
+		var b = str4.charAt(i);
+		if(b == 'h') {
+			num++;
+		}
+	}
+	console.log(num);
+	//	3.indexOf() , 检索指定字符第一次出现的位置
+	var str6 = 'hello';
+	var index = str6.indexOf('l');
+	console.log(index);
+	//	4.lastIndexOf()	检索指定字符最后一次出现的位置
+	var str7 = 'hellol';
+	var index = str7.lastIndexOf('l');
+	console.log(index);
+	
+	//功能函数
+	//	toUpperCase() : 将字符串变成大写
+	//  toLowerCase() : 将字符串变成小写
+	var str8 = 'df';
+	var str = str8.toUpperCase();
+	console.log(str);
+	
+	//比较,根据ASCII码进行标胶,前>后，结果为1 反之-1，相等为0
+	var str8 = 'b';
+	var str9 = 'a';
+	var str = str8.localeCompare(str9);
+	console.log(str);
+	
+	//截取某段字符串		slice(start,end) start,end 都是下标
+	var str10 = 'asrgfh';
+	var index = str10.slice(3,5);
+	console.log(index);
+</script>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<!--
+			form
+				1.action="需要传送到的地址"
+				2.methon="传输的方式"
+					get  在地址栏做内容的拼接，用户可以看得到
+					post 把扁表单原素里面的内容做拼接，并且打包传送到action的地址，用户不可见
+				3.target
+					_blank  在新窗口打开
+					_self   再当前窗口打开
+				4.input的type类型
+					文本		text
+					密码		password
+					单选		radio    单选框name要设置为一样的
+					多选		checkbox
+					文件上传	file
+					按钮		button
+					隐藏		hidden
+					重置		reset
+					提交		submit
+				提示：Input里面标签的值都体现在value中
+					  name属性一定要设置，如果不设置，无法实现上传
+		-->
+		<form action="http://baidu.com" method="post" target="_blank">
+			用户名:<input type="text" value="123456" name="usernam"/><br />
+			密码:<input type="password" name="pwd" value="" /><br />
+			性别:男 <input type="radio" name="sex" id="" value="man" />
+				 女 <input type="radio" name="sex" id="" value="woman" /><br />
+			兴趣爱好：
+			吃<input type="checkbox" name="hobby" id="hobby" value="eat" />
+			喝<input type="checkbox" name="hobby" id="hobby" value="drink" />
+			拉<input type="checkbox" name="hobby" id="hobby" value="shit" />
+			撒<input type="checkbox" name="hobby" id="hobby" value="pee" />
+			睡<input type="checkbox" name="hobby" id="hobby" value="sleep" /><br />
+			上传<input type="file" name="upload" id="upload" value="" /><br />
+			按钮 <input type="button" name="anniu" id="" value="1" /><br />
+			隐藏 <input type="hidden" name="yincang" id="yincang" value="nothing" /><br />
+			<input type="reset" name="reset"/><br />
+			<input type="submit" />
+		</form>
+	</body>
+</html>

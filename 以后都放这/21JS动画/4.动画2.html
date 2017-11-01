@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#box {
+				width: 100px;
+				height: 100px;
+				background: red;
+				position: absolute;
+			}
+			input {
+				margin-top: 200px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box"></div>
+		<input type="button" value="点我"/>
+	</body>
+</html>
+<script type="text/javascript">
+	
+	var oDiv = document.getElementById('box');
+	var oBtn = document.getElementsByTagName('input')[0];
+	
+	oBtn.onclick = function(){
+		var left = getStyle(oDiv,'left');
+		var left1 = parseInt(left);
+		var timer = setInterval(function() {
+			left1++;
+			oDiv.style.left = left1 + 'px';
+			if(left1 == 400) {
+				clearInterval(timer);
+			}
+		}, 10);
+	}
+	
+	function getStyle(obj,attr) {
+		return obj.currentStyle ? obj.currentStyle[attr] : getComputedStyle(obj,null)[attr];
+	}
+</script>

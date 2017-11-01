@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			a[href] {
+				border: 1px solid red;
+				background: yellow;
+			}
+			
+			input[type=password] {
+				border: 10px solid red;
+				background: yellow;
+			}
+			/*
+				属性选择器
+					第一种	选择带有某种属性的所有元素
+						a[属性名] {...}
+					第二种	选择带有某种属性，并且规定属性值的元素
+						input[属性名=属性值] {...}
+						
+			*/
+		</style>
+	</head>
+	<body>
+		<a href="#">我是有属性的a</a>
+		<a href="#">我是有属性的a</a>
+		<a href="#">我是有属性的a</a>
+		<a href="#">我是有属性的a</a>
+		<a>我是没有属性的a</a>
+		<a>我是没有属性的a</a>
+		<a>我是没有属性的a</a>
+		<a>我是没有属性的a</a>
+		<input type="text" />
+		<input type="text" />
+		<input type="password" />
+		<input type="password" />
+	</body>
+</html>

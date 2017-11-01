@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<!--<meta name="viewport" content="width=100,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />-->
+		<!--H5页面窗口自动调整到设备宽度，并禁止用户缩放页面-->
+		<meta name="viewport" content="width=640,user-scalable=no,target-densitydpi=device-dpi"/>
+		<!--width取值与页面定义的宽度一致，目前最佳实践，缺点android2.3.5以下版本不支持，可通过用户代理判断-->
+		<title></title>
+		<style type="text/css">
+			body {
+				margin: 0;
+			}
+			
+			html,body {
+				width: 100%;
+				height: 100%;
+			}
+			
+			div {
+				width: 640px;
+				background: linear-gradient(to bottom,red,blue);
+				height: 100%;
+				position: relative;
+			}
+			
+			span {
+				width: 30px;
+				height: 30px;
+				background: url(../../img/r.jpg);
+				background-size: 100% 100%;
+				position: absolute;
+				left: 100px;
+				color: #fff;
+				font-size: 40px;
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			<span>1</span>
+		</div>
+	</body>
+</html>
+

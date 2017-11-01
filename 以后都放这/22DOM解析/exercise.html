@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../../css/reset.css"/>
+		<style type="text/css">
+			#cont {
+				width: 500px;
+				background: #CCCCCC;
+				margin: 0 auto;
+				padding: 30px 0 30px 30px;
+			}
+			p {
+				display: inline-block;
+			}
+			textarea {
+				border: none;
+				margin: 20px 0 0 20px;
+			}
+			input {
+				width: 300px;
+				height: 30px;
+				display: inline-block;
+				margin-left: 20px;
+			}
+			input[type=submit] {
+				margin: 20px 0 0 50px;
+				background: white;
+			}
+			#message_cont {
+				margin-top: 20px;
+			}
+			.message {
+				margin-top: 10px;
+				height: 50px;
+			}
+			.message p {
+				text-indent: 20px;
+			}
+			.message p:nth-child(1) {
+				width: 95%;
+				height: 25px;
+				line-height: 25px;
+				background-color: grey;
+			}
+			.message p:nth-child(2) {
+				width: 95%;
+				height: 25px;
+				line-height: 25px;
+				background: white;
+				position: relative;
+			}
+			.del {
+				position: absolute;
+				right: 25px;
+				color: dodgerblue;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="cont">
+			<ul>
+				<li><p>姓名:</p><input type="text" id="nickName" name="nickName"/></li>
+				<li><p>内容:</p><textarea id="textBox" name="" rows="5" cols="50"></textarea></li>
+			</ul>
+			<input type="submit" value="提交" id="sub"/>
+			<div id="message_cont">
+				<h4>显示留言</h4>
+				<ul>
+					<li class="message">
+						<p>亚洲</p>
+						<p>111<span class="del">删除</span></p>
+					</li>
+					<!--<li class="message">
+						<p>亚洲</p>
+						<p>111 <span class="del">删除</span></p>
+					</li>-->
+				</ul>
+			</div>
+		</div>
+	</body>
+</html>
+<script type="text/javascript">
+	var nickName = document.getElementById('nickName');
+	var textBox = document.getElementById('textBox');
+	var cont = document.getElementById('textBox');
+	var sub = document.getElementById('sub');
+	var ul = document.getElementsByTagName('ul')[1];
+	var del = document.getElementsByClassName('del');
+	var a = 0;
+	
+	sub.onclick = function() {
+		var li = document.createElement('li');
+		var p1 = document.createElement('p');
+		var p2 = document.createElement('p');
+		var span = document.createElement('span');
+		li.className = 'message';
+		p1.innerHTML = nickName.value;
+		p2.innerHTML = textBox.value + '<span class="del">删除</span>';
+		li.index = a;
+		a++;
+		ul.appendChild(li);
+		li.appendChild(p1);
+		li.appendChild(p2);
+		console.log(li.index);
+		return a;
+	}
+	function liNum() {
+		var del = document.getElementsByClassName('del');
+		var num = del.length;
+		return num;
+	}
+	
+//	for(var i=0;i<liNum();i++) {
+//		del[i].onclick = function() {
+//			var li = ul.getElementsByTagName('li');
+//			ul.removeChild(li[i]);
+//		}
+//	}
+
+	del[0].onclick = function() {
+//		var p1 = this.parentNode;
+//		var p2 = p2.parentNode;
+		console.log(this.parentNode);
+	}
+
+</script>

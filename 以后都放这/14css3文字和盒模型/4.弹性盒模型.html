@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#box {
+				width: 900px;
+				margin: 0 auto;
+				border: 1px solid red;
+				display: -webkit-box;
+				-webkit-box-pack: justify;
+			}
+			
+			#box div {
+				width: 100px;
+				height: 100px;
+				background: red;
+				text-align: center;
+				font: 30px/100px "微软雅黑";
+				color: #fff;
+				border: 1px solid #fff;
+			}
+			/*#box div:nth-child(1) {-webkit-box-flex:1;}
+			#box div:nth-child(2) {-webkit-box-flex:2;}
+			#box div:nth-child(3) {-webkit-box-flex:3;}
+			#box div:nth-child(4) {-webkit-box-flex:4;}
+			#box div:nth-child(5) {-webkit-box-flex:5;}*/
+		</style>
+	</head>
+	<body>
+		<!--
+			弹性盒模型，不兼容，w3c目前还没有标准化，需要加浏览器内核前缀
+			
+			如果想要搭建弹性盒模型，首先要在父级建立弹性盒模型的空间
+			方法:
+				diasplay:-webkit-box;
+				diasplay:-moz-box;
+				diasplay:-ms-box;
+				diasplay:-o-box;
+				diasplay:box;
+			排列方式:水平、垂直
+				-webkit-box-orient:verticla; 垂直
+				-webkit-box-orient:horizontal; 水平
+			
+			子级的排列位置。可以给父级加-webkit-box-pack 来实现
+			方法:
+				-webkit-box-pack:
+				-moz-box-pack:
+				-ms-box-pack:
+				-o-box-pack:
+				box-pack:
+				
+					相应的值有:
+						start 	 左边  默认值
+						center   中间
+						end  	 右边
+						justify  均分
+			自己自己本身可以均分父级的宽度，根据自身的份数进行均分
+				设置份数的方法
+					给子级加
+						-webkit-box-flex:几份;
+						如:-webkit-box-flex:1; 根据一份的宽度来计算  分一份
+						  -webkit-box-flex:5;  根据一份的宽度来计算  分五份
+		-->
+		<div id="box">
+			<div>1</div>
+			<div>2</div>
+			<div>3</div>
+			<div>4</div>
+			<div>5</div>
+		</div>
+	</body>
+</html>

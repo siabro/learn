@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="text" value="" id="inp1"/>
+		<input type="button" value="" id="inp2"/>
+		<img src="" id="img1" style="width:400px;height:400px;"/>
+	</body>
+</html>
+<script type="text/javascript">
+	var inp1 = document.getElementById('inp2');
+	var img1 = document.getElementById('img1');
+	var a = 1;
+	inp1.onclick = function() {
+		if(a > 2){
+			a = 1;
+		}
+		img1.src = '../../img/' + a + '.jpg';
+		a = a + 1;
+	}
+</script>

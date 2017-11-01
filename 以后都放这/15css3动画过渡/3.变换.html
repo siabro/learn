@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body {
+				height: 500px;
+				border: 1px solid red;
+			}
+			div {
+				width: 100px;
+				height: 100px;
+				background: red;
+				transition: 1s;
+				margin: 100px auto;
+			}
+			body:hover div {
+				transform:translate(200px,300px) rotate(90deg) scale(2) skewX(45deg);
+			}
+		</style>
+	</head>
+	<body>
+		<!--
+			变换
+				transform
+					位移
+						translate	当中接受的值就是正常的px值，如:200px
+						translateX()  正值往右走，负值往左走
+						translateY()  正值往下走，负值往上走
+						translate(X州的偏移量，Y轴的偏移量)
+					旋转
+						rotate	当中接受的是一个旋转角度  如:45deg
+						roate()	正值顺时针  负值逆时针
+					缩放
+						scale	当中接受的是一个数值，可以是浮点数，如:1.2、0.3或2
+						scale() 大于1是放打效果，小于1是缩小效果
+					变形(斜切)
+						skew  当中接受的是一个旋转角度，如:40deg
+						skewX()
+						skewY()
+						skew(30deg,30deg)
+							第一个值X轴斜切角度
+							第一个值Y轴斜切角度
+							
+		-->
+		<div></div>
+	</body>
+</html>

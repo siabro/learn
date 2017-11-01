@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			#wrap {
+				width: 100px;
+				height: 100px;
+				background: red;
+				position: absolute;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="wrap"></div>
+	</body>
+</html>
+<script type="text/javascript">
+	var wrap = document.getElementById('wrap');
+	
+	//	响应必须在标签的范围内才能响应
+	window.onmousedown = function(e) {
+		var ev1 = e || window.event;
+		var currentX = ev1.offsetX;
+		var currentY = ev1.offsetY;
+		
+		window.onmousemove = function(e) {
+			var ev2 = e || window.event;
+			wrap.style.left = ev2.clientX - currentX +'px';
+			wrap.style.top = ev2.clientY - currentY + 'px';
+		}
+		
+		window.onmouseup = function() {
+			//	鼠标抬起，取消移动事件
+			window.onmousemove = null;
+		}
+	}
+	
+	
+</script>

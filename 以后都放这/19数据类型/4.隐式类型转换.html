@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script>
+	/*
+		隐式类型转换
+		
+		+	'100' + 86	10086	变成字符串
+		- * / %					变成数字 
+		++ -- 					变成数字 
+		> < 					当字符串和字符串进行比较时，会逐个比较
+		!  取反					把右边的数据转换成布尔值
+		==						判断==两边是否相等，会先把字符串类型转换为数字类型
+		=== 判断===左右两边数据类型是否一致再进行比较
+		*/
+	
+//	var a = '100';
+//	var b = 20;
+//	var c = a / b;
+	
+//	alert( c );
+//	alert( typeof c );
+	
+//	alert( a-- );
+
+//	var a = '190';
+//	var b = '180';
+//	var c = a > b;
+//	
+//	alert(c);
+//	alert( typeof c );
+
+//	var a = 0;
+//	alert( !a );
+
+	var a = '10';
+	var b = '10';
+	
+	if(a === b) {
+		alert('真');
+	}else {
+		alert('假');
+	}
+</script>

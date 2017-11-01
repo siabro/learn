@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="wrap"></div>
+	</body>
+</html>
+<script type="text/javascript">
+	//	对于标签而言，只要是系统提供的属性，都可以通过.获得并设置
+	//	标签的可视属性
+	
+	var wrap = document.getElementById('wrap');
+	
+//	console.log(wrap.id);
+//	console.log(wrap.className);
+//	console.log(wrap.style);
+
+	//添加额外的可视属性
+	wrap.setAttribute('hello','你好');
+	//获取属性，不仅限于自定义属性
+	var value = wrap.getAttribute('hello');
+	console.log(value);
+	//移除属性
+	wrap.removeAttribute('hello');
+	console.log(wrap);
+	
+	wrap.name = 'yazhou';
+</script>

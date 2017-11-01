@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#wrap {
+				width: 100px;
+				height: 100px;
+				background: red;
+			}
+		</style>
+	</head>
+	<body>
+		<a href="http://www.baidu.com">进入百度</a>
+		<div id="wrap"></div>
+	</body>
+</html>
+<script type="text/javascript">
+	//	阻止系统默认事件的两种方法
+	//	IE : return false
+	//现代浏览器	  需要传递事件对象	ev.preventDefault();
+	
+	var b = document.getElementsByTagName('a')[0];
+	var wrap = document.getElementById('wrap');
+	
+//	b.onclick = function() {
+//		alert('点击');
+//		return false;
+//	}
+
+	b.addEventListener('click',function(e) {
+		var ev = e || window.event;
+		alert('点击');
+		ev.preventDefault();
+	}, false);
+	
+	wrap.oncontextmenu = function() {
+		return false;
+	}
+</script>

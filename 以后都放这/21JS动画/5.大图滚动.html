@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../../css/reset.css"/>
+		<style type="text/css">
+			#box {
+				width: 200px;
+				height: 200px;
+				border: 1px solid black;
+				position: relative;
+				margin: 10px auto;
+				/*overflow: hidden;*/
+			}
+			ul {
+				width: 1000px;
+				height: 200px;
+				position: absolute;
+				/*left: -200px;*/
+			}
+			li {
+				background: red;
+				width: 200px;
+				height: 200px;
+				border: cornflowerblue;
+				box-sizing: border-box;
+				float: left;
+				text-align: center;
+				line-height: 200px;
+				font-size: 100px;
+			}
+			li:nth-child(2) {
+				background: yellow;
+			}
+			li:nth-child(3) {
+				background: greenyellow;
+			}
+			li:nth-child(5) {
+				background: yellow;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<ul>
+				<li>三</li>
+				<li>一</li>
+				<li>二</li>
+				<li>三</li>
+				<li>一</li>
+			</ul>
+		</div>
+	</body>
+</html>
+<script type="text/javascript">
+	var oDiv = document.getElementById('box');
+	var oUl = document.getElementsByTagName('ul')[0];
+	var lis = document.getElementsByTagName('li');
+	var width = parseInt(getStyle(oDiv,'width'));
+
+	
+	init();
+	function init() {
+		oUl.style.left = -width + 'px';
+	}
+	begin();
+	function begin() {
+		var timer2 = setInterval(function(){
+			move('left');
+		},3000);
+	}
+	
+	function changePosition(offValue) {
+		oUl.style.left = offValue + 'px';
+	}
+	
+
+	function move( direction ) {
+		var left = getStyle(oUl,'left');
+		var left1 = parseInt(left);
+		var timer1 = setInterval(function(){
+			if( direction == 'left') {
+				left1--;	
+			}else if(direction == 'right') {
+				left1++;
+			}
+			
+			if(left1 == -(lis.length - 1) * width) {
+				left1 = -width;
+			}
+			
+			if(left1 == 0) {
+				left1 = -(lis.length-2) * width;
+			}
+			if(left1 % width == 0) {
+				clearInterval(timer1);
+			}
+			
+			changePosition(left1);
+		},10);
+	}
+	
+	
+	
+	function getStyle(obj , attr) {
+		return obj.currentStyle ? obj.currentStyle[attr] : getComputedStyle( obj , null)[attr];
+	}
+	
+</script>
