@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#wrap  {
+				width: 288px;
+				height: 512px;
+				background: url(img/bg_day.png) no-repeat;
+				margin: 0 auto;
+				position: relative;
+				overflow: hidden;
+			}
+			#score {
+				width: 24px;
+				height: 44px;
+				background: url(img/font_048.png) no-repeat;
+				position: absolute;
+				top: 50px;
+				left: 50%;
+				margin-left: -12px;
+			}
+			#title {
+				position: absolute;
+				top: 130px;
+				left: 35px;
+				-webkit-animation: fly 1s infinite alternate;
+				-o-animation: fly 1s infinite alternate;
+				animation: fly 1s infinite alternate;
+			}
+			#title_bird {
+				width: 48px;
+				height: 48px;
+				background: url(img/bird0_1.png) no-repeat;
+				display: inline-block;
+				-webkit-animation: birdMove 1s infinite alternate;
+				-o-animation: birdMove 1s infinite alternate;
+				animation: birdMove 1s infinite alternate;
+			}
+			@keyframes fly {
+				0% {
+					-webkit-transform: translateY(0px);
+					-ms-transform: translateY(0px);
+					-o-transform: translateY(0px);
+					transform: translateY(0px);
+				}
+				100% {
+					-webkit-transform: translateY(30px);
+					-ms-transform: translateY(30px);
+					-o-transform: translateY(30px);
+					transform: translateY(30px);
+				}
+			}
+			@-webkit-keyframes fly {
+				0% {
+					-webkit-transform: translateY(0px);
+					-ms-transform: translateY(0px);
+					-o-transform: translateY(0px);
+					transform: translateY(0px);
+				}
+				100% {
+					-webkit-transform: translateY(30px);
+					-ms-transform: translateY(30px);
+					-o-transform: translateY(30px);
+					transform: translateY(30px);
+				}
+			}
+			@-webkit-keyframes birdMove {
+				0% {
+					background: url(img/bird0_0.png);
+				}
+				50% {
+					background: url(img/bird0_1.png);
+				}
+				100% {
+					background: url(img/bird0_2.png);
+				}
+			}
+			@keyframes birdMove {
+				0% {
+					background: url(img/bird0_0.png);
+				}
+				50% {
+					background: url(img/bird0_1.png);
+				}
+				100% {
+					background: url(img/bird0_2.png);
+				}
+			}
+			#start {
+				width: 116px;
+				height: 70px;
+				top: 60%;
+				left: 50%;
+				margin-left: -58px;
+				position: absolute;
+				background: url(img/button_play.png) no-repeat;
+			}
+			#land {
+				width: 576px;
+				height: 112px;
+				position: absolute;
+				bottom: 0px;
+				background: url(img/land.png);
+				animation: landMove 3s linear infinite;
+			}
+			@keyframes landMove {
+				0% {
+					-webkit-transform: translateX(0px);
+					-ms-transform: translateX(0px);
+					-o-transform: translateX(0px);
+					transform: translateX(0px);
+				}
+				100% {
+					-webkit-transform: translateX(-288px);
+					-ms-transform: translateX(-288px);
+					-o-transform: translateX(-288px);
+					transform: translateX(-288px);
+				}
+			}
+			@-webkit-keyframes landMove {
+				0% {
+					-webkit-transform: translateX(0px);
+					-ms-transform: translateX(0px);
+					-o-transform: translateX(0px);
+					transform: translateX(0px);
+				}
+				100% {
+					-webkit-transform: translateX(-288px);
+					-ms-transform: translateX(-288px);
+					-o-transform: translateX(-288px);
+					transform: translateX(-288px);
+				}
+			}
+			#bird {
+				width: 48px;
+				height: 48px;
+				position: absolute;
+				left: 25px;
+				top: 200px;
+				margin-top: -24px;
+				display: none;
+				background: url(img/bird_down.png) no-repeat;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="wrap">
+			<div id="score"></div>
+			<div id="title">
+				<img src="img/title.png"/>
+				<div id="title_bird"></div>
+			</div>
+			<div id="start"></div>
+			<div id="land"></div>
+			<div id="bird"></div>
+		</div>
+	</body>
+</html>
+<script type="text/javascript">
+	var title = document.getElementById('title');
+	var start = document.getElementById('start');
+	var score = document.getElementById('score');
+	var bird = document.getElementById('bird'); 
+	var y = 2;
+
+	gameStart();
+	clickWrap();
+	function gameStart() {
+		start.onclick = function() {
+			title.style.display = 'none';
+			this.style.display = 'none'
+			bird.style.display = 'block';
+			//	小鸟向下掉
+			birdMove(bird);
+		}
+	}
+	
+	
+	function birdMove(bird) {
+		var top = bird.offsetTop;
+		var timer = setInterval(function() {
+			top += y;
+			y += 0.5;
+			if(y >= 2) {
+				y=2;
+			}
+//			if(y < 2) {
+//				y += 1;
+//			}else{
+//				y = 2;
+//			}
+			bird.style.top = top + 'px';
+		}, 30)
+	}
+	
+	function clickWrap() {
+		wrap.onclick = function() {
+			y = -10;
+		}
+	}
+	
+</script>

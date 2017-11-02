@@ -3,6 +3,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<title></title>
+		<script src="collisions.js" type="text/javascript" charset="utf-8"></script>
 		<style type="text/css">
 			#box {
 				width: 100px;
@@ -26,41 +27,17 @@
 	</body>
 </html>
 <script type="text/javascript">
+	//	碰撞检测
+	//	解决问题：代码的通用性，函数回调，多用于封装	
 	var box = document.getElementById('box');
 	var wrap = document.getElementById('wrap');
 	
 	
-	collisions(box,wrap);
-	function collisions(obj_crash,obj_smashed) {
-		obj_crash.onmousedown = function(ev) {
-			var e = ev || window.event;
-			var currentX = e.offsetX;
-			var currentY = e.offsetY;
-			window.onmousemove = function(ev) {
-				var offe = ev || window.event;
-				var offX = offe.clientX;
-				var offY = offe.clientY;
-				obj_crash.style.left = offX - currentX + 'px';
-				obj_crash.style.top = offY - currentY + 'px';
-				
-				move(obj_crash,obj_smashed);
-			}
-			window.onmouseup = function() {
-				window.onmousemove = null;
-			}
-		}
-	}
-
-	function move(crash,smashed) {
-		var minX = smashed.offsetLeft - crash.offsetWidth;
-		var maxX = smashed.offsetLeft + smashed.offsetWidth;
-		var minY = smashed.offsetTop - crash.offsetHeight;
-		var maxY = smashed.offsetTop + smashed.offsetHeight;
-		if(crash.offsetLeft >= minX && crash.offsetLeft <= maxX && crash.offsetTop >= minY 
-			&& crash.offsetTop <= maxY) {
-			smashed.style.background = 'red';
-		}else{
-			smashed.style.background = 'green';
-		}
-	}
+	move(box,wrap,function(){
+//		console.log('碰撞了');
+		wrap.style.background = 'red';
+	},function() {
+		wrap.style.background = 'green';
+	});
+	
 </script>
