@@ -3,6 +3,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<title></title>
+		<script src="../4事件练习/collisions.js" type="text/javascript" charset="utf-8"></script>
 		<style type="text/css">
 			#wrap  {
 				width: 288px;
@@ -20,6 +21,7 @@
 				top: 50px;
 				left: 50%;
 				margin-left: -12px;
+				z-index: 1;
 			}
 			#title {
 				position: absolute;
@@ -141,7 +143,36 @@
 				top: 200px;
 				margin-top: -24px;
 				display: none;
+			}
+			.birdUp {
+				background: url(img/bird_up.png) no-repeat;
+			}
+			.birdDown {
 				background: url(img/bird_down.png) no-repeat;
+			}
+			.duct {
+				width: 52px;
+				height: 400px;
+				position: absolute;
+				left: 288px;
+			}
+			.upduct {
+				width: 52px;
+				height: 150px;
+				background: url(img/pipe_2.png) repeat-y;
+				position: absolute;
+			}
+			.upduct img {
+				width: 52px;
+				position: absolute;
+				bottom: 0;
+			}
+			.downduct {
+				width: 52px;
+				height: 100px;
+				position: absolute;
+				bottom: 0;
+				background: url(img/pipe_1.png) repeat-y;
 			}
 		</style>
 	</head>
@@ -155,10 +186,19 @@
 			<div id="start"></div>
 			<div id="land"></div>
 			<div id="bird"></div>
+			<!--<div class="duct">
+				<div class="upduct">
+					<img src="img/pipe_up.png"/>
+				</div>
+				<div class="downduct">
+					<img src="img/pipe_down.png"/>
+				</div>
+			</div>-->
 		</div>
 	</body>
 </html>
 <script type="text/javascript">
+	var wrap = document.getElementById('wrap');
 	var title = document.getElementById('title');
 	var start = document.getElementById('start');
 	var score = document.getElementById('score');
@@ -174,6 +214,8 @@
 			bird.style.display = 'block';
 			//	小鸟向下掉
 			birdMove(bird);
+			
+	createDuct();
 		}
 	}
 	
@@ -183,22 +225,102 @@
 		var timer = setInterval(function() {
 			top += y;
 			y += 0.5;
-			if(y >= 2) {
-				y=2;
+			if(y >= 6) {
+				y=6;
 			}
-//			if(y < 2) {
-//				y += 1;
-//			}else{
-//				y = 2;
-//			}
+			if(y < 0) {
+				bird.className = 'birdUp';
+			}else{
+				bird.className = 'birdDown';
+			}
+			if(top >= 400) {
+				top = 400;
+				clearInterval(timer);
+			}
 			bird.style.top = top + 'px';
 		}, 30)
 	}
 	
 	function clickWrap() {
 		wrap.onclick = function() {
-			y = -10;
+			y = -7;
 		}
 	}
+	
+	function random(min,max) {
+		return parseInt(Math.random() * (max - min) + min);
+	}
+	
+	var i = 0;
+	function createDuct() {
+		var timer = setInterval(function() {
+			var duct = document.createElement('div');
+			duct.className = 'duct';
+			wrap.appendChild(duct);
+			//	添加上管道
+			var up = document.createElement('div');
+			up.className = 'upduct';
+			up.style.height = random(52,196) + 'px'
+			duct.appendChild(up);
+			up.index = i;
+//			console.log(up.index);
+			
+			var upImg = document.createElement('img');			
+			upImg.src = 'img/pipe_up.png';
+			up.appendChild(upImg);
+			
+			//	添加下管道
+			var down = document.createElement('div');
+			down.className = 'downduct';
+			down.style.height = 296 - up.offsetHeight + 'px';
+			duct.appendChild(down);
+			down.index = i;
+//			console.log(down.index);
+			
+			var downImg = document.createElement('img');			
+			downImg.src = 'img/pipe_down.png';
+			down.appendChild(downImg);
+			
+			//	将管道整体传递，让管道移动
+			ductMove(duct);
+			i++;
+			
+//			collisions(bird,up,function() {
+//				console.log('1');
+//			},function() {
+//				console.log('没碰撞');
+//			});
+			
+		}, 3000)
+	}
+	
+	
+	//	管道移动函数
+	function ductMove(duct) {
+		var offLeft = duct.offsetLeft;
+		duct.move = setInterval(function() {
+			offLeft -= 1;
+			duct.style.left = offLeft + 'px';
+			collisions(bird,duct,function() {
+				duct.move = null;
+			},function() {
+				console.log('没碰撞');
+			});
+		}, 20)
+	}
+	
+	//	碰撞函数
+//	function pengZhuang(i) {
+//		var duct_down = document.getElementsByClassName('downduct');
+//		var duct_up = document.getElementsByClassName('upduct');
+//		
+//		
+//		for(var a=0;a<i+1;a++) {
+//			var duct1 = document.getElementsByClassName('duct')[a];
+//			
+//		}
+//		
+//	}
+	
 	
 </script>

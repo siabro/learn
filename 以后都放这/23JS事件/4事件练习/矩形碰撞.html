@@ -16,8 +16,8 @@
 				height: 100px;
 				background: green;
 				position: absolute;
-				top: 300px;
-				left: 300px;
+				top: 200px;
+				left: 200px;
 			}
 		</style>
 	</head>
@@ -31,13 +31,16 @@
 	//	解决问题：代码的通用性，函数回调，多用于封装	
 	var box = document.getElementById('box');
 	var wrap = document.getElementById('wrap');
-	
+	var offX = wrap.offsetLeft;
 	
 	move(box,wrap,function(){
-//		console.log('碰撞了');
 		wrap.style.background = 'red';
 	},function() {
 		wrap.style.background = 'green';
 	});
 	
+//	var timer =  setInterval(function() {
+//		offX -= 10;
+//		wrap.style.left = offX + 'px';
+//	}, 1000)
 </script>
