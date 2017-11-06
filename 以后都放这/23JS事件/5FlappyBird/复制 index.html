@@ -11,7 +11,7 @@
 				background: url(img/bg_day.png) no-repeat;
 				margin: 0 auto;
 				position: relative;
-				overflow: hidden;
+				/*overflow: hidden;*/
 			}
 			#score {
 				width: 24px;
@@ -150,17 +150,18 @@
 			.birdDown {
 				background: url(img/bird_down.png) no-repeat;
 			}
-			.duct {
+			/*.duct {
 				width: 52px;
 				height: 400px;
 				position: absolute;
 				left: 288px;
-			}
+			}*/
 			.upduct {
 				width: 52px;
-				height: 150px;
 				background: url(img/pipe_2.png) repeat-y;
 				position: absolute;
+				left: 288px;
+				top: 0;
 			}
 			.upduct img {
 				width: 52px;
@@ -169,9 +170,9 @@
 			}
 			.downduct {
 				width: 52px;
-				height: 100px;
 				position: absolute;
-				bottom: 0;
+				bottom: 112px;
+				left: 288px;
 				background: url(img/pipe_1.png) repeat-y;
 			}
 		</style>
@@ -251,16 +252,17 @@
 		return parseInt(Math.random() * (max - min) + min);
 	}
 	
+	var i = 0;
 	function createDuct() {
-		var timer = setTimeout(function() {
-			var duct = document.createElement('div');
-			duct.className = 'duct';
-			wrap.appendChild(duct);
+		var timer = setInterval(function() {
+//			var duct = document.createElement('div');
+//			duct.className = 'duct';
+//			wrap.appendChild(duct);
 			//	添加上管道
 			var up = document.createElement('div');
 			up.className = 'upduct';
 			up.style.height = random(52,196) + 'px'
-			duct.appendChild(up);
+			wrap.appendChild(up);
 			
 			var upImg = document.createElement('img');			
 			upImg.src = 'img/pipe_up.png';
@@ -270,14 +272,15 @@
 			var down = document.createElement('div');
 			down.className = 'downduct';
 			down.style.height = 296 - up.offsetHeight + 'px';
-			duct.appendChild(down);
+			wrap.appendChild(down);
 			
 			var downImg = document.createElement('img');			
 			downImg.src = 'img/pipe_down.png';
 			down.appendChild(downImg);
 			
+			i++;
 			//	将管道整体传递，让管道移动
-			ductMove(duct,up,down);
+			ductMove(up,down);
 			
 			
 		}, 3000)
@@ -285,29 +288,31 @@
 	
 	
 	//	管道移动函数
-	function ductMove(duct,upduct,downduct) {
-		var offLeft = duct.offsetLeft;
-		duct.move = setInterval(function() {
-			offLeft -= 1;
-			duct.style.left = offLeft + 'px';
-			pengZhuang(upduct,downduct);
+	function ductMove(upduct,downduct) {
+		var offUpDuctLeft = upduct.offsetLeft;
+		var offDownDuctLeft = downduct.offsetLeft;
+		upduct.move = setInterval(function() {
+			offUpDuctLeft -= 1;
+			upduct.style.left = offUpDuctLeft + 'px';
+			pengZhuang(upduct);
+		}, 20)
+		downduct.move = setInterval(function() {
+			offDownDuctLeft -= 1;
+			downduct.style.left = offDownDuctLeft + 'px';
+			pengZhuang(downduct);
 		}, 20)
 	}
 	
 	//	碰撞函数
-	function pengZhuang(upd,downd) {
-		collisions(bird,upd,function() {
-//			console.log('1');
-			bird.style.background = 'red';
+	function pengZhuang(duct) {
+		var offX = duct.offsetLeft
+		collisions(bird,duct,function() {
+//			bird.style.background = 'red';
+			duct.offsetLeft = offX + 'px'
 		},function() {
-			console.log('没碰撞');
+			bird.style.background = 'green';
 		});
 		
-//		collisions(bird,downd,function() {
-//			bird.style.background = 'red';
-//		},function() {
-//			console.log('没碰撞');
-//		});
 	}
 	
 	

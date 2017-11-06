@@ -10,6 +10,8 @@
 				height: 100px;
 				background: dodgerblue;
 				position: absolute;
+				left: 400px;
+				/*top: 500px;*/
 			}
 			#wrap {
 				width: 100px;
@@ -17,7 +19,7 @@
 				background: green;
 				position: absolute;
 				top: 200px;
-				left: 200px;
+				left: 600px;
 			}
 		</style>
 	</head>
@@ -32,15 +34,48 @@
 	var box = document.getElementById('box');
 	var wrap = document.getElementById('wrap');
 	var offX = wrap.offsetLeft;
+	var y = 1;
 	
-	move(box,wrap,function(){
-		wrap.style.background = 'red';
-	},function() {
-		wrap.style.background = 'green';
-	});
 	
-//	var timer =  setInterval(function() {
-//		offX -= 10;
-//		wrap.style.left = offX + 'px';
-//	}, 1000)
+	clickWrap();
+	birdMove(box);
+	function birdMove(bird) {
+		var top = bird.offsetTop;
+		var timer = setInterval(function() {
+			top += y;
+			y += 0.5;
+			if(y >= 6) {
+				y=6;
+			}
+//			if(y < 0) {
+//				bird.className = 'birdUp';
+//			}else{
+//				bird.className = 'birdDown';
+//			}
+			if(top >= 400) {
+				top = 400;
+				clearInterval(timer);
+			}
+			bird.style.top = top + 'px';
+		},20)
+	}
+	function clickWrap() {
+		window.onclick = function() {
+			y = -7;
+		}
+	}
+	
+	var timer =  setInterval(function() {
+		offX -= 10;
+		wrap.style.left = offX + 'px';
+		collisions(box,wrap,function(){
+			wrap.style.background = 'red';
+		},function() {
+			wrap.style.background = 'green';
+		});
+		if(offX <= 200) {
+			wrap.style.left = 200 + 'px'
+			clearInterval(timer);
+		}
+	}, 50)
 </script>
