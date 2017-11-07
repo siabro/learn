@@ -36,18 +36,21 @@
 	var wrap = document.getElementById('wrap');
 	var disx = disy = 0;
 	var last_x = last_y = 0;
+		
 	
 	touch.on('#wrap', 'drag', function(ev) {
 		ev.preventDefault();
 		disx = ev.x + last_x;
 		disy = ev.y + last_y;
 		wrap.style.transform = 'translate(' + disx + 'px,' + disy + 'px)';
-		console.log(disx);
 	});
 	
-	touch.on('#wrap', 'dragend', function(ev) {
-		last_x = disx;
-		last_y = disy;
-		console.log(last_x);
-	});
+	console.log(disx);
+		touch.on('#wrap', 'dragend', function(ev) {
+			last_x = disx;
+			last_y = disy;
+			console.log(last_x);
+		});
+	
+	
 </script>
