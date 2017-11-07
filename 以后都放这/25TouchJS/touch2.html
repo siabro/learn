@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			#wrap {
+				width: 300px;
+				height: 300px;
+				background: red;
+				position: absolute;
+				left: 50px;
+			}
+		</style>
+	</head>
+	<body><div id="wrap"></div></body>
+</html>
+<script src="touch.min.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+//	touch.on('#wrap', 'tap drag', function(ev) {
+//		ev.preventDefault();
+//		//	点击所在位置，position相对视窗，有：x、y两个值
+////		console.log(ev.position.x);
+//
+//		//	distanceX、x:是两点之间的偏移量
+//		//	distanceY、y:是两点之间的偏移量
+//		console.log(ev.distanceX)
+//	});
+//	
+	//	transform是针对标签的最初是状态,第二次拖动时，wrap的位置又回到初始位置
+	//	所以要将第一次拖动完成的位置记录，并最为第二次拖动的起始
+	var wrap = document.getElementById('wrap');
+	var disx = disy = 0;
+	var last_x = last_y = 0;
+	
+	touch.on('#wrap', 'drag', function(ev) {
+		ev.preventDefault();
+		disx = ev.x + last_x;
+		disy = ev.y + last_y;
+		wrap.style.transform = 'translate(' + disx + 'px,' + disy + 'px)';
+		console.log(disx);
+	});
+	
+	touch.on('#wrap', 'dragend', function(ev) {
+		last_x = disx;
+		last_y = disy;
+		console.log(last_x);
+	});
+</script>

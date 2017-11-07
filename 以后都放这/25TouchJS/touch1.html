@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#wrap {
+				width: 100px;
+				height: 100px;
+				background: red;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="wrap"></div>
+	</body>
+</html>
+<script src="touch.min.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+	//	touch一般适用于手机端
+	//	最好添加阻止默认事件
+	
+	//	使用方法
+	touch.on('#wrap', 'tap', function() {
+		alert('点击');
+	});
+	//	传入两种事件类型
+	touch.on('#wrap', 'tap hold', function() {
+		alert('点击');
+	});
+	//	传入对象
+	var wrap = document.getElementById('wrap');
+	touch.on(wrap, 'tap hold', function() {
+		alert('点击');
+	});
+	
+</script>

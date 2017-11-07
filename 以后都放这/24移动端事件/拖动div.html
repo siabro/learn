@@ -24,14 +24,16 @@
 	function touchEvent(ev) {
 		switch (ev.type){
 			case 'touchstart':
-				var currentX = ev.touches[0].clientLeft;
-				console.log(ev.touches[0]);
-				var currentY = ev.touches[0].offsetTop;
+				currentX = ev.touches[0].pageX - ev.touches[0].target.offsetLeft;
+				currentY = ev.touches[0].pageY - ev.touches[0].target.offsetTop;
 				break;
 			case 'touchmove':
-				console.log(ev);
+				ev.preventDefault();
 				var clientx = ev.changedTouches[0].clientX;
 				var clienty = ev.changedTouches[0].clientY;
+				var offX = clientx - currentX;
+				console.log(clientx);
+				console.log(currentX);
 				
 				box.style.left = clientx - currentX + 'px';
 				box.style.top = clienty - currentY + 'px';

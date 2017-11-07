@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+	</body>
+</html>
+<script type="text/javascript">
+	function orientationEvent(ev) {
+		ev.preventDefault();
+		switch (window.orientation){
+			case 0:
+				alert('竖着');
+				break;
+			case 90:
+				alert('左横');
+				break;
+			case -90:
+				alert('右横');
+				break;
+			default:
+				break;
+		}
+	}
+	
+	window.addEventListener('orientationchange', orientationEvent, false);
+</script>
