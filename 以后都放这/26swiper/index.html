@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>swiper介绍</title>
+		<link rel="stylesheet" type="text/css" href="css/swiper-3.4.2.min.css"/>
+		<script src="js/swiper-3.4.2.min.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			.swiper-cont {
+				width: 500px;
+				height: 280px;
+				border: 1px solid red;
+				position: relative;
+			}
+			.swiper-active {
+				text-align: center;
+			}
+			.swiper-active img {
+				width: 50%;
+				height: 50%;
+			}
+			.back {
+				width: 150%;
+				height: 100%;
+				background: url(img/back.jpg) no-repeat;
+				background-size: 100% 100%;
+				position: absolute;
+			}
+		</style>
+	</head>
+	<body>
+		<!--	必须设定规定的类名	-->
+		<div class="swiper-container swiper-cont">
+			<div class="back" data-swiper-parallax='-50'></div>
+			<div class="swiper-wrapper">
+				<div class="swiper-slide swiper-active" data-hash="slide1">
+					<img src="img/1.jpg"/>
+				</div>
+				<div class="swiper-slide swiper-active"data-hash="slide2">
+					<img src="img/2.jpg"/>
+				</div>
+				<div class="swiper-slide swiper-active" data-hash="slide3">
+					<img src="img/3.jpg"/>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
+<script type="text/javascript">
+	var swiper = new Swiper('.swiper-container', {
+		autoplay:2000,	//	可选选项，自动滑动
+		initialSlide:0,	//	设定初始化时slide的索引
+		direction:'horizontal',	//	Slides的滑动方向，可设置水平(horizontal)或垂直(vertical)
+		speed:20,				//	滑动速度
+		autoplayDisableOnInteraction:false,	//	用户操作swiper之后，是否禁止autoplay。默认为true：停止
+		autoplayStopOnLast:true,	//	如果设置为true，当切换到最后一个slide时停止自动切换
+		grabCursor:true,
+		loop:true,
+		parallax : true,
+		hashnav:true
+	});
+</script>

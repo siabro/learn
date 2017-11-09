@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="css/swiper-3.4.2.min.css"/>
+		<script src="js/swiper-3.4.2.min.js" type="text/javascript" charset="utf-8"></script>
+		<title></title>
+		<style type="text/css">
+			.swiper-container {
+				width: 500px;
+				height: 250px;
+				border: 1px solid red;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="swiper-container">
+		<div style="background-image:url(img/back.jpg);height: 250px;position: absolute;" data-swiper-parallax="-23%" data-swiper-parallax-duration="3000"></div>
+		    <div class="swiper-wrapper">
+		       <div class="swiper-slide"><div data-swiper-parallax="-100">Slide 1</div></div>
+		       <div class="swiper-slide"><div data-swiper-parallax="-100">Slide 2</div></div>
+		    </div>
+		</div>
+	</body>
+</html>
+<script language="javascript"> 
+    var mySwiper = new Swiper('.swiper-container',{
+    	autoplay:2000,	
+        parallax : true,
+    });
+</script>
