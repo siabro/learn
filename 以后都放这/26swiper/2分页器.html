@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>分页器</title>
+		<link rel="stylesheet" type="text/css" href="css/swiper-3.4.2.min.css"/>
+		<script src="js/swiper-3.4.2.min.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			.swiper-cont {
+				width: 500px;
+				height: 250px;
+				border: 1px solid red;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="swiper-container swiper-cont">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide">
+					<img data-src="img/1.jpg" class="swiper-lazy"/>
+					<div class="swiper-lazy-preloader"></div>
+				</div>
+				<div class="swiper-slide">
+					<img data-src="img/2.jpg" class="swiper-lazy"/>
+					<div class="swiper-lazy-preloader"></div>
+				</div>
+				<div class="swiper-slide">
+					<img data-src="img/3.jpg" class="swiper-lazy"/>
+					<div class="swiper-lazy-preloader"></div>
+				</div>
+			</div>
+			<div class="swiper-pagination"></div>
+			<div class="swiper-button-prev"></div>
+    		<div class="swiper-button-next"></div>
+		</div>
+	</body>
+</html>
+<script type="text/javascript">
+	var swiper = new Swiper('.swiper-container', {
+		autoplay: 2000,
+		pagination: '.swiper-pagination',	//	添加分页	
+		paginationClickable: true,			//	分页是否可点击跳转
+//		loop: true,
+		paginationType: 'custom',			//	自定义分页样式
+		paginationCustomRender: function (swiper, current, total) {
+		    return current + ' of ' + total;
+		},
+		prevButton:'.swiper-button-prev',	//	上一页按钮
+		nextButton:'.swiper-button-next',	//	下一页按钮
+		lazyLoading: true,					//	图片懒加载
+	})
+</script>
