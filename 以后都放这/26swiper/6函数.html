@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/swiper-3.4.2.min.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="css/swiper-3.4.2.min.css"/>
+		<style type="text/css">
+			.swiper-cont {
+				width: 500px;
+				height: 250px;
+				/*border: 1px solid red;*/
+			}
+		</style>
+	</head>
+	<body>
+		<div class="swiper-container swiper-cont">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide">
+					<img src="img/1.jpg"/>
+				</div>
+				<div class="swiper-slide">
+					<img src="img/2.jpg"/>
+				</div>
+				<div class="swiper-slide">
+					<img src="img/3.jpg"/>
+				</div>
+			</div>
+		</div>
+		<div id="btn">点击</div>
+	</body>
+</html>
+<script type="text/javascript">
+	var swiper = new Swiper('.swiper-container', {
+		autoplay: 2000,
+//		loop:true,
+	});
+	
+	var btn = document.getElementById('btn');
+	
+	btn.onclick = function() {
+		//	Swiper切换到指定slide
+		swiper.slideTo(2,200)
+		
+	}
+</script>

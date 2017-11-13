@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="css/swiper-3.4.2.min.css"/>
+		<script src="js/swiper-3.4.2.min.js" type="text/javascript" charset="utf-8"></script>
+		<title></title>
+		<style type="text/css">
+			.swiper-container {
+				width: 500px;
+				height: 250px;
+				/*border: 1px solid red;*/
+			}
+			.swiper-cont2 {
+				/*width: 500px;*/
+				height: 100px;
+				/*border: 1px solid red;*/
+			}
+			.sw2 {
+				width: 100%;
+				margin: 0 auto;
+			}
+			.ss2 {
+				width: 150px !important;
+				height: 100px;
+				/*margin-right: 10px;*/
+			}
+		</style>
+	</head>
+	<body>
+		<div class="swiper-container swiper-cont1" id="swiper_one">
+			<div class="swiper-wrapper sw1">
+				<div class="swiper-slide">
+					<img src="img/1.jpg"/>
+				</div>
+				<div class="swiper-slide">
+					<img src="img/2.jpg"/>
+				</div>
+				<div class="swiper-slide">
+					<img src="img/3.jpg"/>
+				</div>
+			</div>
+		</div>
+		<div style="width: 500px;height: 100px;border: 1px solid red;margin: 0 auto;">
+			<div class="swiper-container swiper-cont2" id="swiper_two">
+				<div class="swiper-wrapper sw2">
+					<div class="swiper-slide ss2" style="background: url(img/1.jpg);background-size: 100% 100%;">
+					</div>
+					<div class="swiper-slide ss2" style="background: url(img/2.jpg);background-size: 100% 100%;;">
+					</div>
+					<div class="swiper-slide ss2" style="background: url(img/3.jpg);background-size: 100% 100%;">
+					</div>
+				</div>
+			</div>	
+		</div>
+		
+	</body>
+</html>
+<script type="text/javascript">
+	var swiper1 = new Swiper('#swiper_one', {
+//		autoplay: 2000
+		
+	});
+	
+	var swiper2 = new Swiper('#swiper_two', {
+		spaceBetween: 10,
+        centeredSlides: true,
+        slidesPerView: 'auto',
+        touchRatio: 0.2,
+        slideToClickedSlide: tru
+	});
+	
+	swiper1.params.control = swiper2;
+	swiper2.params.control = swiper1;
+</script>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>放大</title>
+		<script src="js/swiper-3.4.2.min.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="css/swiper-3.4.2.min.css"/>
+		<style type="text/css">
+			.swiper-cont {
+				width: 500px;
+				height: 250px;
+				/*border: 1px solid red;*/
+			}
+		</style>
+	</head>
+	<body>
+		<div class="swiper-container swiper-cont">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide">
+					<div class="swiper-zoom-container">
+						<img src="img/3.jpg"/>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
+<script type="text/javascript">
+	var swiper = new Swiper('.swiper-container', {
+		//	开启缩放
+		zoom:true
+	});
+</script>
