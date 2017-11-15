@@ -10,53 +10,135 @@
 <script type="text/javascript">
 // 	规则1：全局查找：g  从头查到尾
 
-//	var str = 'hz vz a h';
-//	var reg = /z/g;
-//	
-//	console.log(str.replace(reg, 'H'));
-//	
-//	var str = '和 单 个 的';
-//	var reg = / /g;
+	var str = 'hz vz a h';
+	var reg = /z/g;
 	
-//	var value1 = reg.exec(str);
-//	var value2 = reg.exec(str);
-//	var value3 = reg.exec(str);
-//	var value4 = reg.exec(str);
+	console.log(str.replace(reg, 'H'));
+	
+	var str = '和 单 个 的';
+	var reg = / /g;
+	
+	var value1 = reg.exec(str);
+	var value2 = reg.exec(str);
+	var value3 = reg.exec(str);
+	var value4 = reg.exec(str);
 
-//	console.log(value1,value2,value3,value4);
+	console.log(value1,value2,value3,value4);
 
 	//	查找字符串中所有的空格
-//	var num = 0;
-//	while(reg.exec(str)) {
-//		num++;
-//	}
-//	console.log(num);
+	var num = 0;
+	while(reg.exec(str)) {
+		num++;
+	}
+	console.log(num);
 
 //	规则二：不区分大小写：i
-//	var str = 'HELLO';
-//	var reg = /l/ig;
+	var str = 'HELLO';
+	var reg = /l/ig;
 	
-//	var value = reg.test(str);
-//	var value = str.replace(reg, 'MM');
-//	console.log(value);
+	var value = reg.test(str);
+	var value = str.replace(reg, 'MM');
+	console.log(value);
 	
 //	规则三：任意字符：.
-//	var str = 'helloe';
-//	var reg = /e../;
-//	
-//	console.log(str.replace(reg, 'M'));
+	var str = 'helloe';
+	var reg = /e../;
+
+	console.log(str.replace(reg, 'M'));
 	
 //	规则四：0个或1个字符 : ? :修饰的是前一个字符,代表前一个字符存在或者不存在
 	
-//	var str = 'hello';
-//	var reg = /e?/g;	//	修饰的是e
-//	
-//	console.log(str.replace(reg, 'M'));
+	var str = 'hello';
+	var reg = /e?/g;	//	修饰的是e
+
+	console.log(str.replace(reg, 'M'));
 	
 //	规则五:代表0个或N非字符： * :修饰的是前一个字符,代表前一个字符存在0次或者N次
 
-	var str = 'hello';
+	var str = 'heeello';
 	var reg = /e*/g;	//	修饰的是e
 	
 	console.log(str.replace(reg, 'M'));
+
+//	规则六:代表1个或者多个: + :
+	var str = 'helleeeo';
+	var reg = /e+/g;
+	
+	console.log(str.replace(reg, 'M'));
+
+//	例:
+	var str = 'hello';
+	var reg = /e.+/g;
+	
+	console.log(str.replace(reg, 'M'));
+
+//	规则七:重复的范围{}: 修饰{}前面的字符
+//	{3}代表前面的字符必须有三个
+//	{1,3}代表前面的字符最少有1个，最多有3个
+//	{1，}最少1个最多N个
+//	优先取最大值
+
+	var str = 'heeeello';
+	var reg = /e{1,}/g;
+	
+	console.log(str.replace(reg, 'M'));
+
+//	规则八:或规则:  | 
+	
+	var str = 'hello';
+	var reg = /he|l/g;
+	
+	console.log(str.replace(reg, 'M'));
+
+
+//	规则九:或规则:  []
+//	[]中：空格、特殊字符等也算作或
+
+	var str = 'haelLLO 123456798你好';
+	var reg = /[hel]/g;				//	替换范围:h、e、l
+	var reg = /[a-zA-Z0-9]/g;		//	替换范围:a-zA-Z0-9
+	var reg = /[\u4e00-\u9fa5]/g;	//	替换范围:汉字
+	console.log(str.replace(reg, 'M'));
+
+//	规则十:以什么开头: ^
+
+	var str = 'hello';
+	var reg = /^he/;
+
+	console.log(reg.test(str));
+	
+//	规则十一:以什么结尾: $
+
+	var str = 'hello';
+	var reg = /a$/;
+
+	console.log(reg.test(str));
+
+//	例:判断一个字符串是否是6位长度的数字
+	
+	var str = '12345678';
+	var reg = /^[0-9]{6}$/g;
+	
+	console.log(reg.test(str));
+
+//	规则12: 取反 : ^
+//	需和[]一起使用
+
+	var str = 'hello123';
+	var reg = /[^a-zA-Z]/g;		//	替换不是字母的内容
+
+	console.log(str.replace(reg, 'M'));
+	
+//	规则13 : ()	 :括号内的字符作为一个整体
+	var str = 'hehehello';
+	var reg = /(he){3}/;
+
+	console.log(str.replace(reg, 'm'));
+	
+	/*
+	总结:
+		1.修饰整个正则表达式的内容: g、i
+		2.修饰前一个或者前一个(): ? , + , * , {}
+		3.其他:	.  |  []  ^  $  取反  ()
+	*/
 </script>
