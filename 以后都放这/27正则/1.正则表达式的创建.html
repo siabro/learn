@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>正则表达式的创建</title>
+	</head>
+	<body>
+	</body>
+</html>
+<script type="text/javascript">
+	//	正则的作用：快速查找并匹配相对应的字符串内容
+	//	1.正则表达式的创建
+	
+	var str = '傻傻的策划书的GSNN';
+	
+	//	正则创建方式1
+	/*var reg = new RegExp('的G');
+	console.log(reg.test(str));*/
+	
+	//	正则创建方式2
+	var reg = /的G/;
+	console.log(reg.test(str));
+</script>

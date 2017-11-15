@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script type="text/javascript">
+	var str = '惠风和畅VB沃尔特畅V';
+	var reg = /畅V/;
+	
+	//	1.正则常用函数test()
+	//	判断字符串中是否含有符合正则规则的内容，返回值是bool类型
+	
+//	var value = reg.test(str);
+//	console.log(value);
+	
+	//	2.正则常用函数exec()
+	//	查找符合正则表达式的字符串所在的源字符串的位置下标
+	//	获得的是字符串的手字符所对应的下标
+	
+	var value = reg.exec(str);
+	console.log(value.index);
+	
+	
+</script>

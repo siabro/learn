@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script type="text/javascript">
+// 	规则1：全局查找：g  从头查到尾
+
+//	var str = 'hz vz a h';
+//	var reg = /z/g;
+//	
+//	console.log(str.replace(reg, 'H'));
+//	
+//	var str = '和 单 个 的';
+//	var reg = / /g;
+	
+//	var value1 = reg.exec(str);
+//	var value2 = reg.exec(str);
+//	var value3 = reg.exec(str);
+//	var value4 = reg.exec(str);
+
+//	console.log(value1,value2,value3,value4);
+
+	//	查找字符串中所有的空格
+//	var num = 0;
+//	while(reg.exec(str)) {
+//		num++;
+//	}
+//	console.log(num);
+
+//	规则二：不区分大小写：i
+//	var str = 'HELLO';
+//	var reg = /l/ig;
+	
+//	var value = reg.test(str);
+//	var value = str.replace(reg, 'MM');
+//	console.log(value);
+	
+//	规则三：任意字符：.
+//	var str = 'helloe';
+//	var reg = /e../;
+//	
+//	console.log(str.replace(reg, 'M'));
+	
+//	规则四：0个或1个字符 : ? :修饰的是前一个字符,代表前一个字符存在或者不存在
+	
+//	var str = 'hello';
+//	var reg = /e?/g;	//	修饰的是e
+//	
+//	console.log(str.replace(reg, 'M'));
+	
+//	规则五:代表0个或N非字符： * :修饰的是前一个字符,代表前一个字符存在0次或者N次
+
+	var str = 'hello';
+	var reg = /e*/g;	//	修饰的是e
+	
+	console.log(str.replace(reg, 'M'));
+</script>

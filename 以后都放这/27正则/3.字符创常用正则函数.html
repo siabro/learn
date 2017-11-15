@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>字符创常用正则函数</title>
+	</head>
+	<body>
+	</body>
+</html>
+<script type="text/javascript">
+	//	字符串常用的函数：1.replace	2.match	 3.search
+	var str = '红包橙V二二二乎乎';
+	var reg = /二/;
+	
+	var value = str.replace(reg, 'san');
+	console.log(value);
+	
+	var value = str.search(reg);
+	console.log(value);
+	
+	var value = str.match(reg);
+	console.log(value);
+</script>
