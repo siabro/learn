@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="wrap">你好
+			<div class="two"></div>
+		</div>
+		<div class="one">亚洲</div>
+		<div class="one">你好</div>
+	</body>
+</html>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script type="text/javascript">
+	//	选择器 : id
+	var wrap = $('#wrap');
+	//	选择器 : element
+	var allDiv = $('div');
+//	console.log(allDiv);
+	//	选择器 : class
+	var one = $('.one');
+//	console.log(one);
+	//	* : 所有标签
+	var all = $('*');
+//	console.log(all);
+	// 同时获得不同的标签
+	var all1 = $('#wrap, div.one');
+//	console.log(all1);
+	//	层级选择器 : 获得父标签下的子标签
+	var div2 = $('#wrap .two');
+	console.log(div2);
+</script>
