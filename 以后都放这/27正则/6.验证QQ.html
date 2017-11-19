@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div>
+			<input type="text" name="QQ" id="QQ" value="" />
+			<input type="button" name="btn" id="btn" value="提交" />
+		</div>
+	</body>
+</html>
+<script type="text/javascript">
+	var inp = document.getElementById('QQ');
+	var btn = document.getElementById('btn');
+	
+	btn.onclick = function() {
+		var value = inp.value;
+		var reg = /^[0-9]{5,11}$/g;
+		var test = reg.test(value);
+		if(test) {
+			alert('输入正确');
+		}else{
+			alert('输入错误');
+		}
+	}
+	
+</script>

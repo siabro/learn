@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div>
+			<input type="text" name="QQ" id="phoneNum" value="" />
+			<input type="button" name="btn" id="btn" value="提交" />
+		</div>
+	</body>
+</html>
+<script type="text/javascript">
+	var inp = document.getElementById('phoneNum');
+	var btn = document.getElementById('btn');
+	
+	btn.onclick = function() {
+		var value = inp.value;
+		var reg = /^1(39|57|34)[0-9]{8}$/g;
+		var test = reg.test(value);
+		if(test) {
+			alert('输入正确');
+		}else{
+			alert('输入错误');
+		}
+	}
+	
+</script>
